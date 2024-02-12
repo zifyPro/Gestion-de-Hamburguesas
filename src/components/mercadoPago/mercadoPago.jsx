@@ -4,9 +4,8 @@ import { useState } from "react";
 
 const MercadoPago = () => {
   const [preferenceId, setPreferenceId] = useState(null);
-  initMercadoPago("PUBLIC_KEY", {
-    locale: "es-AR",
-  });
+  console.log(preferenceId);
+  initMercadoPago("PUBLIC_KEY");
 
   const pagos = async () => {
     const newPage = await fetch("api/mercadoPago", {
@@ -20,7 +19,9 @@ const MercadoPago = () => {
         price: 1.7,
       }),
     });
+    console.log("holaaa", newPage);
     const response = await newPage.json();
+    console.log(response);
     const { id } = response;
     return id;
   };
@@ -29,6 +30,7 @@ const MercadoPago = () => {
     const id = await pagos();
     if (id) {
       setPreferenceId(id);
+      console.log(setPreferenceId(id));
     }
   };
 
@@ -40,7 +42,10 @@ const MercadoPago = () => {
       <p>$1700</p>
       <button onClick={handleOnClick}> Comprar </button>
       {preferenceId && (
-        <Wallet initialization={{ preferenceId: preferenceId }} />
+        <Wallet
+          initialization={{ preferenceId: preferenceId }}
+          customization={{ texts: { valueProp: "smart_option" } }}
+        />
       )}
     </>
   );
