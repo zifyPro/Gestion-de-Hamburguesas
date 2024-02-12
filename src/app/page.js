@@ -1,10 +1,13 @@
 import Home from "@/components/Home/Home";
-import 'tailwindcss/tailwind.css'
+import "tailwindcss/tailwind.css";
 
 export default function HomeP() {
   return (
     <>
-    <Home></Home>
+      <Home></Home>
+      <a href="/about">
+        <button>ABOUT</button>
+      </a>
     </>
   );
 }
