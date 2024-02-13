@@ -1,4 +1,4 @@
-[
+export const DataBurgers = [
 	{
 		id: 1,
 		title: 'CheeseBurger',

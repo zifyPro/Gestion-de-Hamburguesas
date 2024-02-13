@@ -1,17 +1,20 @@
 import React from 'react';
 import 'tailwindcss/tailwind.css';
 import Foter from '../Foter/Foter';
+import Link from 'next/link';
 
 const Home = () => {
 	return (
 		<section className="">
 			<div className="flex flex-wrap">
 				<div className="h-full w-1/2 p-1 rounded-xl">
-					<img
-						src="./promo.jpg"
-						alt="Imagen 1"
-						className="w-full h-full md:w-1/2 md:h-3/4 md:ml-auto rounded-xl"
-					/>
+					<Link href="/store">
+						<img
+							src="./promo.jpg"
+							alt="Imagen 1"
+							className="w-full h-full md:w-1/2 md:h-3/4 md:ml-auto rounded-xl"
+						/>
+					</Link>
 				</div>
 
 				<div className="p-1 h-full w-1/2 rounded-xl">
