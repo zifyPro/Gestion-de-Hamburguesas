@@ -9,11 +9,19 @@ const MercadoPago = () => {
   initMercadoPago(process.env.NEXT_PUBLIC_KEY);
 
   const pagos = async () => {
-    const newPage = await axios.post("api/mercadoPago");
-    console.log("holaaa", newPage);
-    const { id } = await newPage.data;
-    console.log(newPage.data);
-    return id;
+    try {
+      const newPage = await axios.post("api/mercadoPago", {
+        title: "hamburguesas",
+        quantity: "1",
+        price: "100",
+      });
+      console.log("holaaa", newPage);
+      const { id } = await newPage.data;
+      console.log(newPage.data);
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleOnClick = async () => {
@@ -22,25 +30,24 @@ const MercadoPago = () => {
       setPreferenceId(id);
     }
     alert("holaa");
-    setPreferenceId(1);
   };
 
   return (
     <>
-      <div id="wallet_container">
-        <div className="flex flex-col justify-center ">
-          <h2>{pagos.title}</h2>
-          <img className="w-48 " src="/descarga.jpeg" />
-          <p>$1700</p>
-          <button onClick={handleOnClick}> Comprar </button>
-          {preferenceId && (
-            <Wallet
-              initialization={{ preferenceId: preferenceId }}
-              customization={{ texts: { valueProp: "smart_option" } }}
-            />
-          )}
-        </div>
+      {/* <div id="wallet_container"> */}
+      <div className="flex flex-col justify-center ">
+        <h2>{pagos.title}</h2>
+        <img className="w-48 " src="/descarga.jpeg" />
+        <p>$1700</p>
+        <button onClick={handleOnClick}> Comprar </button>
+        {preferenceId && (
+          <Wallet
+            initialization={{ preferenceId: preferenceId }}
+            customization={{ texts: { valueProp: "smart_option" } }}
+          />
+        )}
       </div>
+      {/* </div> */}
     </>
   );
 };
