@@ -13,15 +13,14 @@ export function POST(request) {
       body: {
         items: [
           {
-            title: request.json(),
-            quantity: Number(request.quantity),
+            title: request.body,
+            quantity: Number(request.body.quantity),
             unit_price: Number(request.price),
           },
         ],
       },
     });
-    console.log(request.json());
-    // console.log(request.title);
+    console.log(request.title);
     return NextResponse.json(preference);
   } catch (error) {
     return NextResponse.json({ error: error.message });

@@ -6,17 +6,10 @@ import axios from "axios";
 const MercadoPago = () => {
   const [preferenceId, setPreferenceId] = useState(null);
   console.log(preferenceId);
-  initMercadoPago(process.env.REACT_APP_PUBLIC_KEY, {
-    locale: "es-AR",
-  });
+  initMercadoPago(process.env.NEXT_PUBLIC_KEY);
 
   const pagos = async () => {
-    const newPage = await axios.post("api/mercadoPago", {
-      id: "",
-      title: "hamburguesas",
-      quantity: 1,
-      price: 1.7,
-    });
+    const newPage = await axios.post("api/mercadoPago");
     console.log("holaaa", newPage);
     const { id } = await newPage.data;
     console.log(newPage.data);
