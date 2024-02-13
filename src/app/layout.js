@@ -6,7 +6,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 
 export const metadata = {
-	title: 'Mr.Billy bob',
+	title: 'Mr.Bilee bob',
 	description: 'las mejores hamburgesas',
 };
 
