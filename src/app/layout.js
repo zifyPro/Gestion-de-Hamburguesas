@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
 			}}
 		>
 			<html lang="en">
-				<body className="bg-gradient-to-tr from-slate-800 to-regal-blue">
+				<body className="bg-gradient-to-tr from-slate-900 to-regal-blue">
 					{children}
 				</body>
 			</html>
