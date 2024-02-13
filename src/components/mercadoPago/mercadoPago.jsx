@@ -1,28 +1,22 @@
 "use client";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState } from "react";
+import axios from "axios";
 
 const MercadoPago = () => {
   const [preferenceId, setPreferenceId] = useState(null);
   console.log(preferenceId);
-  initMercadoPago("PUBLIC_KEY");
+  initMercadoPago(process.env.PUBLIC_KEY);
 
   const pagos = async () => {
-    const newPage = await fetch("api/mercadoPago", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: "hamburguesas",
-        quantity: 1,
-        price: 1.7,
-      }),
+    const newPage = await axios.post("api/mercadoPago", {
+      title: "hamburguesas",
+      quantity: 1,
+      price: 1.7,
     });
     console.log("holaaa", newPage);
-    const response = await newPage.json();
-    console.log(response);
-    const { id } = response;
+    const { id } = await newPage.data;
+    console.log(newPage.data);
     return id;
   };
 
@@ -31,6 +25,7 @@ const MercadoPago = () => {
     if (id) {
       setPreferenceId(id);
       console.log(setPreferenceId(id));
+      alert("holaa");
     }
   };
 
