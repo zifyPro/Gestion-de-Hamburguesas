@@ -4,7 +4,7 @@ const Cards = ({ data }) => {
 	return (
 		<div>
 			{data.map((item) => (
-				<CardItem item={{ ...item }} />
+				<CardItem key={item.id} item={{ ...item }} />
 			))}
 		</div>
 	);
