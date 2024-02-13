@@ -3,6 +3,7 @@ import React from 'react';
 import { UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import 'tailwindcss/tailwind.css';
+import './Users.css';
 
 const Users = () => {
 	const user = useUser();
@@ -18,10 +19,7 @@ const Users = () => {
 			<div className="w-20 scale-150 flex items-center">
 				{isLogin ? (
 					<>
-						<UserButton
-							className="rounded-full transform scale-125"
-							afterSignOutUrl="/"
-						/>
+						<UserButton className="flex justify-center" afterSignOutUrl="/" />
 						<h4 className="font-sans font-semibold italic text-xs text-nowrap my-auto mx-2 ">
 							{'Hola ' + user.user.username + '!'}
 						</h4>
