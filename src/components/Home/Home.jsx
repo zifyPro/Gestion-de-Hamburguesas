@@ -1,19 +1,10 @@
 import React from 'react';
 import 'tailwindcss/tailwind.css';
-
 import Foter from '../Foter/Foter';
-import Navbar from '../navbar/Navbar';
 
 const Home = () => {
 	return (
 		<section className="">
-			<Navbar />
-			<br />
-			<br />
-			<div className="flex justify-center items-center ">
-				<img className="w-1/3 md:w-1/6" src="./logo.png" alt="logo billiebob" />
-			</div>
-
 			<div className="flex flex-wrap">
 				<div className="h-full w-1/2 p-1 rounded-xl">
 					<img
