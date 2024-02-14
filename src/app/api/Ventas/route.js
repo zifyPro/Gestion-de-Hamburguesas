@@ -7,7 +7,20 @@ export async function GET() {
 }
 
 export async function POST(request) {
-  const data = await request.json();
-  const newVenta = await prisma.ventas.create({ data });
+  const { nombre, telefono, direccion, numeroDeOrden, titleProductos } =
+    await request.json();
+  const newVenta = await prisma.ventas.create({
+    data: {
+      nombre,
+      telefono,
+      direccion,
+      numeroDeOrden,
+      productos: {
+        connect: {
+          title: titleProductos,
+        },
+      },
+    },
+  });
   return NextResponse.json(newVenta);
 }

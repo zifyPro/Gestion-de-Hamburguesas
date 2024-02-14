@@ -11,3 +11,21 @@ export async function POST(request) {
   const newProduct = await prisma.productos.create({ data });
   return NextResponse.json(newProduct);
 }
+
+export async function PUT(request) {
+  const data = await request.json();
+  const updateProduct = await prisma.productos.update({
+    where: { id: data.id },
+    data,
+  });
+  return NextResponse.json(updateProduct);
+}
+
+export async function DELETE(request) {
+  const data = await request.json();
+  const deletedProduct = await prisma.productos.delete({
+    where: { id: data.id },
+  });
+
+  return NextResponse.json(deletedProduct);
+}
