@@ -34,7 +34,10 @@ const Products = () => {
   };
 
   return (
-    <div>
+    <div class="flex flex-col items-center justify-center h-screen">
+      <h2>Hamburguesas</h2>
+      <img src="/descarga.jpeg" />
+      <p class="text-center">$2000</p>
       <button onClick={handleBuy}>comprar</button>
       {preferenceId && (
         <Wallet
