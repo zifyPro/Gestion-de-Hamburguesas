@@ -10,6 +10,7 @@ export default authMiddleware({
     "/api/Ventas",
     "/api/Productos",
     "/api/mercadoPago",
+    "/api/webhook",
     "http:localhost:3001/create_preference",
   ],
 });
