@@ -7,12 +7,17 @@ export default authMiddleware({
   publicRoutes: ["/"],
   ignoredRoutes: [
     "/api/usuarios",
+    "/api/usuarios/:id",
     "/api/Ventas",
     "/api/Productos",
     "/api/mercadoPago",
     "/api/webhook",
     "http:localhost:3001/create_preference",
   ],
+  requireAdminRoutes: ["/panelAdmin"], // Rutas que requieren ser administrador
+  onUnauthorized: (req, res) => {
+    res.status(401).send("No estás autorizado para acceder a esta ruta");
+  },
 });
 
 export const config = {

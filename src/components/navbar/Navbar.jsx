@@ -1,8 +1,24 @@
+"use client";
 import React from "react";
 import { GiTrophy } from "react-icons/gi";
 import Users from "../Users/Users";
 import Link from "next/link";
+// import { useOrganization, useOrganizationList } from "@clerk/nextjs";
+
 const Navbar = () => {
+  // const { organizationList, isLoaded } = useOrganizationList();
+  // let isAdmin = false;
+  // console.log(useOrganizationList);
+
+  // if (isLoaded) {
+  //   const adminOrganization = organizationList.find(
+  //     (org) => org.membership.role === "admin"
+  //   );
+  //   if (adminOrganization && adminOrganization.membership.role === "admin") {
+  //     isAdmin = true;
+  //   }
+  // }
+
   return (
     <>
       <div className="flex flex- justify-around items-center pt-6">
@@ -23,6 +39,13 @@ const Navbar = () => {
           />
         </Link>
       </div>
+      {/* {isAdmin && ( */}
+      <div className="flex flex- justify-around items-center pt-4">
+        <Link href="/panelAdmin">
+          <button>panel administrador</button>
+        </Link>
+      </div>
+      {/* )} */}
     </>
   );
 };
