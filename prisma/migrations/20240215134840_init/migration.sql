@@ -5,6 +5,7 @@ CREATE TABLE "Productos" (
     "description" TEXT NOT NULL,
     "price" INTEGER NOT NULL,
     "img" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
 
     CONSTRAINT "Productos_pkey" PRIMARY KEY ("id")
 );
@@ -25,6 +26,7 @@ CREATE TABLE "Ventas" (
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "user_id" TEXT NOT NULL,
+    "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
@@ -38,6 +40,9 @@ CREATE TABLE "_ProductosToVentas" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_user_id_key" ON "User"("user_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");

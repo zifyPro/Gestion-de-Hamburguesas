@@ -72,6 +72,7 @@ model Productos {
   description String
   price       Int
   img         String
+  type        String
   ventas      Ventas[]
 }
 
