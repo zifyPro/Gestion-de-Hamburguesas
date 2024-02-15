@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,62 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// model Ingredientes {
-//   id          Int         @id @default(autoincrement())
-//   pan         Int
-//   hamburgusas Int
-//   mostaza     Int
-//   tomate      Int
-//   lechuga     Int
-//   cheddar     Int
-//   bacon       Int
-//   cebolla     Int
-//   mayoneza    Int
-//   huevo       Int
-//   productoId  Int
-//   producto    Productos  @relation(fields: [productoId], references: [id])
-// }
-
-// model Productos {
-//   id            Int            @id @default(autoincrement())
-//   title         String
-//   description   String
-//   price         Int
-//   img           String
-//   bebidas       Bebidas[]
-//   ingredientes  Ingredientes[]
-//   ventas        Ventas[]
-// }
-
-// model Ventas {
-//   id            Int            @id @default(autoincrement())
-//   nombre        String
-//   telefono      String
-//   direccion     String
-//   numeroDeOrden Int            @default(autoincrement())
-//   userId        Int
-//   user          User           @relation(fields: [userId], references: [id])
-//   productoId    Int
-//   producto      Productos      @relation(fields: [productoId], references: [id])
-// }
-
-// model User {
-//   id       Int      @id @default(autoincrement())
-//   user_id  String   @unique
-//   username String   @unique
-//   email    String   @unique
-//   ventas   Ventas[]
-// }
-
-// model Bebidas {
-//   id          Int      @id @default(autoincrement())
-//   name        String
-//   description String
-//   price       Int
-//   productoId  Int
-//   producto    Productos  @relation(fields: [productoId], references: [id])
-// }
-
 model Productos {
   id          Int      @id @default(autoincrement())
   title       String
@@ -73,7 +14,7 @@ model Productos {
   price       Int
   img         String
   type        String
-  ventas      Ventas[]
+  ventas      Ventas[] @relation("ProductosToVentas")
 }
 
 model Ventas {
@@ -84,7 +25,7 @@ model Ventas {
   numeroDeOrden Int         @default(autoincrement())
   userId        Int?
   user          User?       @relation(fields: [userId], references: [id])
-  productos     Productos[]
+  productos     Productos[] @relation("ProductosToVentas")
 }
 
 model User {
