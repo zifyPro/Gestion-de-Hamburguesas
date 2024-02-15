@@ -3,6 +3,9 @@ const PanelAdmin = () => {
     <div className="flex flex-col items-center">
       <h1 className="mb-4">esto es el panel administrador</h1>
       <div className="flex justify-around w-full">
+        <button>
+          <a href="/"> black</a>
+        </button>
         <button className="flex justify-center  items-center p-6">
           <a href="/panelAdmin/Productos">Productos</a>
         </button>
