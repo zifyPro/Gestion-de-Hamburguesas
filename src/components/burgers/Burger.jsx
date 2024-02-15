@@ -15,7 +15,7 @@ import useStore from "../../zustand/store/index";
 import Cards from "../cards/Cards";
 
 const Burgers = () => {
-  const newProduct = useStore((state) => state.newProduct);
+  const product = useStore((state) => state.product);
   const getHamburguesas = useStore((state) => state.getHamburguesas);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Burgers = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <Cards newProduct={newProduct} />
+      <Cards product={product} />
     </div>
   );
 };

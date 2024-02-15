@@ -13,10 +13,10 @@
 "use client";
 import Card from "../card/card";
 
-const Cards = ({ newProduct }) => {
+const Cards = ({ product }) => {
   return (
     <div>
-      {newProduct.map((product) => (
+      {product.map((product) => (
         <Card
           key={product?.id}
           id={product?.id}

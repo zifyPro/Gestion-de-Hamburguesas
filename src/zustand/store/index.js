@@ -2,10 +2,10 @@ import create from "zustand";
 import axios from "axios";
 
 const useStore = create((set) => ({
-  newProduct: [],
+  product: [],
   getHamburguesas: async () => {
     const response = await axios.get(`api/Productos`);
-    set({ newProduct: response.data });
+    set({ product: response.data });
   },
 }));
 

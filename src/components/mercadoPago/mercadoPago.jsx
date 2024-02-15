@@ -9,16 +9,17 @@ const Products = () => {
     locale: "es-AR",
   });
 
+  const API_URL_MERCADO_PAGO =
+    process.env.NODE_ENV === "development"
+      ? process.env.NEXT_PUBLIC_URL_REQUESTS_MERCADO_PAGO_LOCAL
+      : process.env.NEXT_PUBLIC_URL_REQUESTS_MERCADO_PAGO_DEPLOY;
   const createPreference = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3001/create_preference",
-        {
-          titlle: "hamburgesa",
-          quantity: 1,
-          price: 100,
-        }
-      );
+      const response = await axios.post(API_URL_MERCADO_PAGO, {
+        titlle: "hamburgesa",
+        quantity: 1,
+        price: 100,
+      });
       const { id } = response.data;
       return id;
     } catch (error) {

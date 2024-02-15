@@ -1,10 +1,10 @@
 import MercadoPago from "@/components/mercadoPago/mercadoPago";
 
-const About = () => {
+const Cart = () => {
   return (
     <>
       <MercadoPago />
     </>
   );
 };
-export default About;
+export default Cart;
