@@ -28,6 +28,7 @@ const Navbar = () => {
 
   const user = useUser();
   const isLogin = user?.isSignedIn;
+  console.log("prueba 2")
 
   return (
     <>
@@ -80,6 +81,7 @@ const Navbar = () => {
             <button className=" text-yellow-500 font-semibold">panel administrador</button>
           </Link>
         </div>
+
       )}
     </>
   );
