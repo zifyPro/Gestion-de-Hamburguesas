@@ -67,18 +67,17 @@ const Navbar = () => {
 </div>
       </div>
       <div className="flex justify-center items-center ">
-        <Link className="flex justify-center items-center " href="/">
+        
           <img
-            className="w-1/3 md:w-1/6"
+            className="w-3/6 md:w-1/6 "
             src="/logo.png"
             alt="logo billiebob"
           />
-        </Link>
       </div>
       {isAdmin && (
-        <div className="flex flex- justify-around items-center pt-4">
+        <div className="flex flex- justify-around items-center pt-1">
           <Link className=" p-2 bg-custom-gray rounded-md" href="/panelAdmin">
-            <button className="font-semibold">panel administrador</button>
+            <button className=" text-yellow-500 font-semibold">panel administrador</button>
           </Link>
         </div>
       )}

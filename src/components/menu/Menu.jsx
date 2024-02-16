@@ -35,7 +35,7 @@ export default function Menus() {
                 <a
                   href="/cart"
                   className={classNames(
-                    active ? "bg-gray-400 text-gray-900" : "text-gray-700",
+                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -48,7 +48,7 @@ export default function Menus() {
                 <a
                   href="#"
                   className={classNames(
-                    active ? "bg-gray-400 text-gray-900" : "text-gray-700",
+                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -61,7 +61,7 @@ export default function Menus() {
                 <a
                   href="/"
                   className={classNames(
-                    active ? "bg-gray-400 text-gray-900" : "text-gray-700",
+                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -75,7 +75,7 @@ export default function Menus() {
                   <button
                     type="submit"
                     className={classNames(
-                      active ? "bg-gray-400 text-gray-900" : "text-gray-700",
+                      active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
                       "block w-full px-4 py-2 text-left text-sm"
                     )}
                   >

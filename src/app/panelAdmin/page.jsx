@@ -1,16 +1,15 @@
 const PanelAdmin = () => {
   return (
-    <div className="flex flex-col items-center">
-      <h1 className="mb-4">esto es el panel administrador</h1>
+    <div className="flex flex-col items-center bg-custom-gray mt-12 rounded-md w-11/12 mx-auto md:w-2/4">
       <div className="flex justify-around w-full">
-        <button>
-          <a href="/"> black</a>
+        <button className=" text-gray-text font-semibold">
+          <a href="/"> Atras</a>
         </button>
-        <button className="flex justify-center  items-center p-6">
+        <button className="flex justify-center  items-center p-6  text-gray-text font-semibold">
           <a href="/panelAdmin/Productos">Productos</a>
         </button>
-        <button className="flex justify-center items-center p-2">
-          <a href="/panelAdmin/Usuarios">users</a>
+        <button className="flex justify-center items-center p-2  text-gray-text font-semibold">
+          <a href="/panelAdmin/Usuarios">Usuarios</a>
         </button>
       </div>
     </div>
