@@ -11,16 +11,16 @@ const CreateProduct = () => {
     type: "",
   });
 
-  const handleSubmit = () => {
-    useEffect(() => {
-      const fetch = async () => {
-        const response = await axios.post("/api/Productos");
-        const result = response.data;
-        setData(result);
-      };
-      fetch();
-    }, []);
-  };
+  //   const handleSubmit = () => {
+  //     useEffect(() => {
+  //       const fetch = async () => {
+  //         const response = await axios.post("/api/Productos");
+  //         const result = response.data;
+  //         setData(result);
+  //       };
+  //       fetch();
+  //     }, []);
+  //   };
   return (
     <div className="flex flex-col bg-custom-gray w-2/4 mx-auto ">
       <form className="flex flex-col mx-auto">
@@ -53,7 +53,7 @@ const CreateProduct = () => {
           <option value={data.bebida}>bebida</option>
           <option value={data.puntos}>puntos</option>
         </select>
-        <button onClick={handleSubmit}>Crear Producto</button>
+        <button>Crear Producto</button>
       </form>
     </div>
   );

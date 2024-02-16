@@ -15,7 +15,7 @@ const Page = () => {
         const API_URL =
           process.env.NODE_ENV === "development"
             ? process.env.NEXT_PUBLIC_URL_REQUESTS_USERS_LOCAL
-            : process.env.NEXT_PUBLIC_URL_REQUESTS_USERS_DEPLOY;
+            : process.env.NEXT_PUBLIC_PROD_URL_REQUESTS_USERS_DEPLOY;
         const response = await axios(API_URL);
         setAllUsers(response.data);
         setFilteredUsers(response.data);
@@ -33,7 +33,7 @@ const Page = () => {
       const API_URL =
         process.env.NODE_ENV === "development"
           ? process.env.NEXT_PUBLIC_URL_REQUESTS_USERS_DELETE_LOCAL
-          : process.env.NEXT_PUBLIC_URL_REQUESTS_USERS_DELETE_DEPLOY;
+          : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_USERS_DELETE_DEPLOY;
       await axios.delete(API_URL, {
         data: { userId },
       });
