@@ -17,6 +17,9 @@ const page = () => {
 					<Link href="/store/bebidas">Bebidas</Link>
 				</button>
 			</div>
+			<br />
+			<br />
+			<br />
 			<Burgers />
 		</>
 	);
