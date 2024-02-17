@@ -33,7 +33,20 @@ export default function Menus() {
             <HeadlessMenu.Item>
               {({ active }) => (
                 <a
-                  href="/cart"
+                  href="/"
+                  className={classNames(
+                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
+                    "block px-4 py-2 text-sm"
+                  )}
+                >
+                  Inicio
+                </a>
+              )}
+            </HeadlessMenu.Item>
+            <HeadlessMenu.Item>
+              {({ active }) => (
+                <a
+                  href="/Cart"
                   className={classNames(
                     active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
                     "block px-4 py-2 text-sm"
@@ -46,26 +59,13 @@ export default function Menus() {
             <HeadlessMenu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/points"
                   className={classNames(
                     active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  Tienda de puntos
-                </a>
-              )}
-            </HeadlessMenu.Item>
-            <HeadlessMenu.Item>
-              {({ active }) => (
-                <a
-                  href="/"
-                  className={classNames(
-                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
-                  Inicio
+                  Tienda de Puntos
                 </a>
               )}
             </HeadlessMenu.Item>

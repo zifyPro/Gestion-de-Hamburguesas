@@ -1,8 +1,8 @@
 const Card = (product) => {
   return (
     // <div className=" list-item items-center ">
-    <div className=" mx-auto  text-gray-text font-semibold w-2/4 ">
-      <div className=" bg-custom-gray w-2/3 mx-auto mt-5 rounded-lg">
+    <div className=" mx-auto  text-gray-text font-semibold w-10/12 md:w-2/4 ">
+      <div className=" bg-custom-gray w-10/12 md:w-2/3   mx-auto mt-5 rounded-lg">
         <h1 className="w-12 mx-auto  text-gray-text font-semibold">
           {product?.title}
         </h1>

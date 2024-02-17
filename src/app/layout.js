@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       }}
     >
       <html lang="en">
-        <body className="bg-[url('https://res.cloudinary.com/divxrmzge/image/upload/v1708111692/mvowmm6tyqgadswre4dl.jpg')] bg-cover bg-center">
+        <body className="bg-[url('https://res.cloudinary.com/divxrmzge/image/upload/v1708176856/ojmk9i0nuuov2f2ahtke.jpg')] bg-cover bg-center">
           <Navbar />
           {children}
         </body>
