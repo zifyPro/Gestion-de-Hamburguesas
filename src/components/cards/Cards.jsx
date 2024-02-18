@@ -15,7 +15,7 @@ import Card from "../card/card";
 
 const Cards = ({ product }) => {
   return (
-    <div>
+    <div  className="pepe2 mt-20 rounded-lg  h-[50vh] overflow-scroll">
       {product.map((product) => (
         <Card
           key={product?.id}

@@ -13,6 +13,7 @@
 import { useEffect } from "react";
 import useStore from "../../zustand/store/index";
 import Cards from "../cards/Cards";
+import Foter from "../Foter/Foter";
 
 const Burgers = () => {
   const product = useStore((state) => state.product);
@@ -23,8 +24,9 @@ const Burgers = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center ">
       <Cards product={product} />
+      <Foter/>
     </div>
   );
 };
