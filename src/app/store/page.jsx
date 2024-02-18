@@ -18,6 +18,7 @@ const page = () => {
 				</button>
 			</div>
 			<Burgers />
+			<br />
 		</section>
 	);
 };
