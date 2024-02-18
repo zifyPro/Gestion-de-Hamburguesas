@@ -39,7 +39,7 @@ const Card = (product) => {
 <div class="mx-auto bg-custom-gray rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32">
   <div class="flex">
     <div class="flex-shrink-0">
-      <img class="h-32 w-3/5" src={product?.img} alt="Imagen de comida"/>
+      <img class="h-32 w-3/5 object-cover" src={product?.img} alt="Imagen de comida"/>
     </div>
     <div class="-ml-20">
       <div class="uppercase tracking-wide text-gray-text font-semibold w-32 relative  text-lg " >{product?.title}</div>
