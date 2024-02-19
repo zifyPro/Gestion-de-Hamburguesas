@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const Productos = () => {
   const [data, setData] = useState([]);
@@ -19,11 +20,19 @@ const Productos = () => {
     fetch();
   }, []);
 
+  const deleteProduct = async (element) => {
+    const API_URL_DELETE =
+      process.env.NODE_ENV === "development"
+        ? process.env.NEXT_PUBLIC_URL_REQUESTS_PRODUCTOS_LOCAL
+        : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_PRODUCTOS_DEPLOY;
+    const response = await axios.delete(API_URL_DELETE, element);
+    const result = response.data;
+    Swal.fire("SweetAlert2 is working!");
+    return result;
+  };
+
   return (
     <div className="list-item items-center ">
-      <h1 className="mx-auto  text-gray-text font-semibold w-36 ">
-        Lista de productos
-      </h1>
       <Link href="/panelAdmin/Productos/create">
         <button>Crear productos</button>
       </Link>
@@ -33,6 +42,9 @@ const Productos = () => {
             key={element.id}
             className=" bg-custom-gray w-2/3 mx-auto mt-5 rounded-lg"
           >
+            <div>
+              <button onClick={deleteProduct}>delete</button>
+            </div>
             <h1 className="w-12 mx-auto  text-gray-text font-semibold">
               {element.title}{" "}
             </h1>
