@@ -17,7 +17,6 @@ export async function GET(request, { params }) {
         },
       },
     });
-    console.log(params.usuariosId);
     return NextResponse.json(result);
   } catch (error) {
     // Si ocurre algún error, devolver un mensaje de error

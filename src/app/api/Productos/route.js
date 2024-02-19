@@ -9,7 +9,6 @@ export async function GET() {
 export async function POST(request) {
   const data = await request.json();
   const newProduct = await prisma.productos.create({ data });
-  console.log("aaaaaaaaaaa", newProduct);
   return NextResponse.json(newProduct);
 }
 

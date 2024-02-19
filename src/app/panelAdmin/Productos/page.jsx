@@ -1,19 +1,28 @@
 "use client";
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Productos = () => {
   const [data, setData] = useState([]);
+  const [searchProduct, setSarchProduct] = useState();
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get("/api/Productos");
+      const API_URL =
+        process.env.NODE_ENV === "development"
+          ? process.env.NEXT_PUBLIC_URL_REQUESTS_PRODUCTOS_LOCAL
+          : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_PRODUCTOS_DEPLOY;
+      const response = await axios.get(API_URL);
       const result = response.data;
       setData(result);
     };
     fetch();
   }, []);
+
+  const HandlerFilter = (types) => {
+    const newFiltrado = data.map((element) => element.type === types);
+    setSarchProduct(newFiltrado);
+  };
 
   return (
     <div className="list-item items-center ">

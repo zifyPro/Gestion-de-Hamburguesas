@@ -19,11 +19,13 @@ const CreateProduct = () => {
     event.preventDefault();
     const priceAsInt = parseInt(data.price);
     const dataWithIntPrice = { ...data, price: priceAsInt };
-    const response = await axios.post("/api/Productos", dataWithIntPrice);
+    const API_URL =
+      process.env.NODE_ENV === "development"
+        ? process.env.NEXT_PUBLIC_URL_REQUESTS_PRODUCTOS_LOCAL
+        : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_PRODUCTOS_DEPLOY;
+    const response = await axios.post(API_URL, dataWithIntPrice);
     return response;
   };
-
-
 
   return (
     <div className="flex flex-col bg-custom-gray w-2/4 mx-auto ">
