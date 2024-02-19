@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
-import { GiTrophy } from "react-icons/gi";
-import Users from "../Users/Users";
+import { FaUser } from "react-icons/fa";
 import Link from "next/link";
-import { useOrganization, useOrganizationList } from "@clerk/nextjs";
+import { useOrganizationList } from "@clerk/nextjs";
 import { UserButton, useUser } from "@clerk/nextjs";
 import Menus from "../menu/Menu";
 
@@ -11,8 +10,7 @@ import Menus from "../menu/Menu";
 const Navbar = () => {
   const { organizationList, isLoaded } = useOrganizationList();
   let isAdmin = false;
-  console.log(organizationList);
-
+  
   if (isLoaded) {
     const adminOrganization = organizationList.find(
       (org) => org.membership.role === "org:admin"
@@ -28,8 +26,7 @@ const Navbar = () => {
 
   const user = useUser();
   const isLogin = user?.isSignedIn;
-  console.log("prueba 2")
-
+ 
   return (
     <>
  
@@ -53,9 +50,10 @@ const Navbar = () => {
         ) : (
           <a
             href="/sign-in"
-            className="   bg-slate-800 text-white rounded-sm my-1.5 mx-1.5 place-content-center text-sm h-6.5 text-center "
+            className="   text-white rounded-sm my-1.5 mx-1.5 place-content-center text-sm h-6.5 text-center "
           >
-            <p className="my-1">Ingresa</p>
+            <FaUser />
+
           </a>
         )}
       </div>

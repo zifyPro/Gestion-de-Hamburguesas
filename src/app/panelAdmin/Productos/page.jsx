@@ -1,8 +1,6 @@
 "use client";
 
-import Burgers from "@/components/burgers/Burger";
 import axios from "axios";
-import Result from "postcss/lib/result";
 import { useEffect, useState } from "react";
 
 const Productos = () => {

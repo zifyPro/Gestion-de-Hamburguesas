@@ -18,8 +18,9 @@ import Foter from '../Foter/Foter';
 const Burgers = () => {
   const product = useStore((state) => state.product);
   const getHamburguesas = useStore((state) => state.getHamburguesas);
-
   const [isLoading, setIsLoading] = useState(true); 
+
+  
   useEffect(() => {
    
     getHamburguesas()

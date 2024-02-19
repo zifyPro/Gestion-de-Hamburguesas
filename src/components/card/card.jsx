@@ -36,7 +36,7 @@ const Card = (product) => {
 
 
 
-<div class="mx-auto bg-custom-gray rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32">
+<div class="mx-auto bg-custom-gray rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-2/3">
   <div class="flex">
     <div class="flex-shrink-0">
       <img class="h-32 w-3/5 object-cover" src={product?.img} alt="Imagen de comida"/>
@@ -47,8 +47,8 @@ const Card = (product) => {
       <button class="block text-lg leading-tight font-medium text-yellow-500 hover:underline -mt-1" onClick={alertDetails}>Leer más</button>
     </div>
     <div class="p-2 mt-auto">
-      <div class="text-lg font-bold text-white -mt-[5vh]">{"$"+product?.price}</div>
-      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-[6.7vh]" onClick={alertAdd}>
+      <div class="text-lg font-bold text-white -mt-[5vh] md:-[6.7vh]">{"$"+product?.price}</div>
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-[6.7vh] md:mt-10" onClick={alertAdd}>
       <FaCartPlus />
       </button>
     </div>
