@@ -20,6 +20,23 @@ const Ventas = () => {
   return (
     <>
       <h1>hola estan son las ventas</h1>
+      {data.length === 0
+        ? "no hay compras "
+        : data.map((element) => {
+            return (
+              <div
+                key={element.id}
+                className=" bg-custom-gray w-2/3 mx-auto mt-5 rounded-lg"
+              >
+                <h1 className="w-12 mx-auto  text-gray-text font-semibold">
+                  {element.nombre}{" "}
+                </h1>
+                <h1 className="w-12 mx-auto  text-gray-text font-semibold">
+                  {element.numeroDeOrden}{" "}
+                </h1>
+              </div>
+            );
+          })}
     </>
   );
 };

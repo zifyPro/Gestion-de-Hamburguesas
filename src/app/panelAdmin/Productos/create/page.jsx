@@ -75,6 +75,7 @@ const CreateProduct = () => {
           <option value="definir">sin definir</option>
           <option value="comida">comida</option>
           <option value="bebidas">bebida</option>
+          <option value="promos">promos</option>
           <option value="puntos">puntos</option>
         </select>
         <button onClick={handleSubmit}>Crear Producto</button>

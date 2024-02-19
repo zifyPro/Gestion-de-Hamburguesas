@@ -37,6 +37,12 @@ const Burgers = () => {
             Burgers
           </button>
           <button
+            onClick={() => setFilter("promos")}
+            className="bg-slate-800 hover:bg-slate-700 text-white rounded m-3 w-20 shadow-md md:w-24 md:m-20 h-10 font-sans font-semibold italic "
+          >
+            promos
+          </button>
+          <button
             onClick={() => setFilter("bebida")}
             className="bg-slate-800 hover:bg-slate-700 text-white rounded m-3 w-20 shadow-md md:w-24 md:m-20 h-10 font-sans font-semibold italic "
           >
