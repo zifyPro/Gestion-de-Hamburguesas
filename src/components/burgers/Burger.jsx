@@ -32,7 +32,7 @@ const Burgers = () => {
 
   return (
     <>
-      <div className="bg-black rounded-lg w-[95vw] md:w-2/4 mx-auto">
+      <div className="bg-custom-gray rounded-lg w-[95vw] md:w-2/4 mx-auto">
         <div className="flex justify-center  h-5">
           <button
             onClick={() => {
