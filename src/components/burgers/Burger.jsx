@@ -11,7 +11,6 @@ const Burgers = () => {
     product: state.product,
   }));
 
- 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -24,11 +23,6 @@ const Burgers = () => {
         setIsLoading(false);
       });
   }, []);
-
-  const HandlerFilter = (types) => {
-    const newFiltrado = product.map((element) => element.type === types);
-    setSarchProduct(newFiltrado);
-  };
 
   return (
     <>

@@ -1,10 +1,10 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Productos = () => {
   const [data, setData] = useState([]);
-  const [searchProduct, setSarchProduct] = useState();
 
   useEffect(() => {
     const fetch = async () => {
@@ -19,16 +19,14 @@ const Productos = () => {
     fetch();
   }, []);
 
-  const HandlerFilter = (types) => {
-    const newFiltrado = data.map((element) => element.type === types);
-    setSarchProduct(newFiltrado);
-  };
-
   return (
     <div className="list-item items-center ">
       <h1 className="mx-auto  text-gray-text font-semibold w-36 ">
         Lista de productos
       </h1>
+      <Link href="/panelAdmin/Productos/create">
+        <button>Crear productos</button>
+      </Link>
       {data.map((element) => {
         return (
           <div

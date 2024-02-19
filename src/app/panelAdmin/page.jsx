@@ -8,8 +8,11 @@ const PanelAdmin = () => {
         <button className="flex justify-center  items-center p-6  text-gray-text font-semibold">
           <a href="/panelAdmin/Productos">Productos</a>
         </button>
-        <button className="flex justify-center items-center p-2  text-gray-text font-semibold">
+        <button className="flex justify-center items-center p-4  text-gray-text font-semibold">
           <a href="/panelAdmin/Usuarios">Usuarios</a>
+        </button>
+        <button className="flex justify-center items-center p-2  text-gray-text font-semibold">
+          <a href="/panelAdmin/Ventas">Ventas</a>
         </button>
       </div>
     </div>
