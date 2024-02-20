@@ -10,8 +10,14 @@ const CardAdmin = (product) => {
         : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_PRODUCTOS_DEPLOY;
     const response = await axios.delete(API_URL_DELETE, { data: { id } });
     const result = response.data;
-    Swal.fire("Producto eliminado correctamente!").then(() => {
-      location.reload();
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title:product.title + " se elimino correctamente" ,
+      showConfirmButton: false,
+      timer: 1500,
+      background: '#19191A', // fondo negro
+      color: '#A2A2A3' // texto blanco
     });
     return result;
   };

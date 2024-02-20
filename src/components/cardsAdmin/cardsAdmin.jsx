@@ -12,7 +12,7 @@ const CardsAdmin = () => {
     (p) => filter === "all" || p.type === filter
   );
   return (
-    <div className=" mt-20 rounded-lg  h-[50vh] overflow-scroll md:mt-28 md:w-3/4 md:overflow-x-hidden">
+    <div className=" mx-auto mt-10 rounded-lg  h-[50vh] overflow-scroll md:mt-8 md:w-3/4 md:overflow-x-hidden">
       {filteredProduct.map((product) => (
         <CardAdmin
           key={product?.id}

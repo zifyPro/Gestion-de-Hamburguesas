@@ -25,7 +25,7 @@ const Card = (product) => {
       imageUrl: product.img,
       imageWidth: 400,
       imageHeight: 200,
-      imageAlt: "Custom image",
+      imageAlt: product.title,
       background: '#19191A', // fondo negro
       color: '#A2A2A3' // texto blanco
     });

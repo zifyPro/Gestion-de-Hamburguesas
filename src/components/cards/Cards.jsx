@@ -12,7 +12,7 @@ const Cards = () => {
     (p) => filter === "all" || p.type === filter
   );
   return (
-    <div className=" mt-20 rounded-lg  h-[50vh] overflow-scroll md:mt-28 md:w-3/4 md:overflow-x-hidden">
+    <div className=" rounded-lg  h-[50vh] overflow-scroll mt-10 md:mt-[12vh] md:w-3/4 md:overflow-x-hidden">
       {filteredProduct.map((product) => (
         <Card
           key={product?.id}

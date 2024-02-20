@@ -1,6 +1,8 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
+import Link from "next/link";
+import Swal from "sweetalert2";
 
 const CreateProduct = () => {
   const [data, setData] = useState({
@@ -14,7 +16,7 @@ const CreateProduct = () => {
   const handleEvent = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
-  //jony ptoooo
+
   const handleSubmit = async () => {
     event.preventDefault();
     const priceAsInt = parseInt(data.price);
@@ -24,6 +26,13 @@ const CreateProduct = () => {
         ? process.env.NEXT_PUBLIC_URL_REQUESTS_PRODUCTOS_LOCAL
         : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_PRODUCTOS_DEPLOY;
     const response = await axios.post(API_URL, dataWithIntPrice);
+    Swal.fire({
+      title: `${data.title} `,
+      text: `se creo correctamente`,
+      icon: "success",
+      background: '#19191A', // fondo negro
+      color: '#A2A2A3' // texto blanco
+    });
     return response;
   };
   const inputClassName =
@@ -85,6 +94,11 @@ const CreateProduct = () => {
           <option value="puntos">puntos</option>
         </select>
         <div className=" flex items-center justify-center mb-2">
+          <Link href={"/panelAdmin/Productos"}>
+          <button className="bg-red-800 mt-4 w-36 rounded-lg h-10 hover:bg-red-600 font-sans block text-sm leading-5">
+            Regresar
+          </button>
+        </Link>
           <button
             onClick={handleSubmit}
             className="bg-sky-800 mt-4 w-36 rounded-lg h-10 hover:bg-sky-600 font-sans block text-sm leading-5"
