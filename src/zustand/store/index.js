@@ -1,8 +1,10 @@
 import create from "zustand";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const useStore = create((set) => ({
   product: [],
+  cart: [],
   filter: "all",
   getHamburguesas: async () => {
     const API_URL =
@@ -13,6 +15,22 @@ const useStore = create((set) => ({
     set({ product: response.data });
   },
   setFilter: (filter) => set({ filter }), // nueva función para cambiar el filtro
+
+  addProductToCart: (producto) =>
+    set((state) => {
+      const newProductInCart = [...state.cart, producto];
+      console.log(producto);
+      Swal.fire({
+        icon: "success",
+        iconColor: "green",
+        titleText: "produc ADD TO CART",
+        background: "#333333",
+        color: "#FF9500",
+        html: '<span style="color: orange;"></span>',
+      });
+      console.log(newProductInCart);
+      return { cart: newProductInCart };
+    }),
 }));
 
 export default useStore;

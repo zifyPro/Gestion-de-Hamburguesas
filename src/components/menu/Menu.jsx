@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Menu as HeadlessMenu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -35,7 +36,9 @@ export default function Menus() {
                 <a
                   href="/"
                   className={classNames(
-                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
+                    active
+                      ? " bg-gray-800 text-gray-text font-semibold"
+                      : "  text-gray-text font-semibold",
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -45,15 +48,17 @@ export default function Menus() {
             </HeadlessMenu.Item>
             <HeadlessMenu.Item>
               {({ active }) => (
-                <a
-                  href="/Cart"
+                <Link
+                  href="/cart"
                   className={classNames(
-                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
+                    active
+                      ? " bg-gray-800 text-gray-text font-semibold"
+                      : "  text-gray-text font-semibold",
                     "block px-4 py-2 text-sm"
                   )}
                 >
                   Carrito
-                </a>
+                </Link>
               )}
             </HeadlessMenu.Item>
             <HeadlessMenu.Item>
@@ -61,7 +66,9 @@ export default function Menus() {
                 <a
                   href="/points"
                   className={classNames(
-                    active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
+                    active
+                      ? " bg-gray-800 text-gray-text font-semibold"
+                      : "  text-gray-text font-semibold",
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -75,11 +82,14 @@ export default function Menus() {
                   <button
                     type="submit"
                     className={classNames(
-                      active ? " bg-gray-800 text-gray-text font-semibold" : "  text-gray-text font-semibold"	,
+                      active
+                        ? " bg-gray-800 text-gray-text font-semibold"
+                        : "  text-gray-text font-semibold",
                       "block w-full px-4 py-2 text-left text-sm"
                     )}
                   >
-zona de entrega                   </button>
+                    zona de entrega{" "}
+                  </button>
                 )}
               </HeadlessMenu.Item>
             </form>
