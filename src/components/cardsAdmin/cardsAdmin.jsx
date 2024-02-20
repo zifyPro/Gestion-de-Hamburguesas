@@ -6,7 +6,7 @@ const CardsAdmin = () => {
   const { product, filter } = useStore((state) => ({
     product: state.product,
     filter: state.filter,
-  })); // obtén el producto y el filtro del estado
+  }));
 
   const filteredProduct = product.filter(
     (p) => filter === "all" || p.type === filter
