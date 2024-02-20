@@ -24,7 +24,7 @@ const Home = () => {
 						rel="noopener noreferrer"
 					>
 						<img
-							src="./puntos.jpg"
+							src="./dd05764f-508a-470c-9128-baa374287004.jpg"
 							alt="Imagen 2"
 							className="w-full h-full md:w-2/4 md:h-3/4 md:mx-left rounded-xl"
 						/>
