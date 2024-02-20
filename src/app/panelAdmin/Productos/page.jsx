@@ -20,14 +20,18 @@ const Productos = () => {
     fetch();
   }, []);
 
-  const deleteProduct = async (element) => {
+  const deleteProduct = async (id) => {
     const API_URL_DELETE =
       process.env.NODE_ENV === "development"
         ? process.env.NEXT_PUBLIC_URL_REQUESTS_PRODUCTOS_LOCAL
         : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_PRODUCTOS_DEPLOY;
-    const response = await axios.delete(API_URL_DELETE, element);
+    const response = await axios.delete(API_URL_DELETE, { data: { id } });
     const result = response.data;
-    Swal.fire("SweetAlert2 is working!");
+
+    console.log(result);
+    Swal.fire("Producto eliminado correctamente!").then(() => {
+      location.reload();
+    });
     return result;
   };
 
@@ -43,7 +47,7 @@ const Productos = () => {
             className=" bg-custom-gray w-2/3 mx-auto mt-5 rounded-lg"
           >
             <div>
-              <button onClick={deleteProduct}>delete</button>
+              <button onClick={() => deleteProduct(element.id)}>delete</button>
             </div>
             <h1 className="w-12 mx-auto  text-gray-text font-semibold">
               {element.title}{" "}
