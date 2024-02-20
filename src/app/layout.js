@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
         baseTheme: dark,
       }}
     >
-      <html lang="en">
+      <html lang="es">
         <body className="bg-[url('https://res.cloudinary.com/divxrmzge/image/upload/v1708176856/ojmk9i0nuuov2f2ahtke.jpg')] bg-cover bg-center">
           <Navbar />
           {children}
