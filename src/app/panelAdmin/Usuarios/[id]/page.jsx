@@ -2,6 +2,7 @@
 import axios from 'axios';
 import Link from 'next/link';
 import { GiTrophy } from 'react-icons/gi';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 const Page = async ({ params }) => {
 	const API_URL =
@@ -13,9 +14,11 @@ const Page = async ({ params }) => {
 
 	return (
 		<>
-			<div className="flex flex-col justify-start bg-custom-gray mt-2 w-3/4  mx-auto">
-				<button className="bg-red-800 mt-2 w-2/4 lg:w-32 rounded-lg h-10 hover:bg-red-600 font-sans block text-sm leading-5 mx-1 ">
-					<Link href={'/panelAdmin/Usuarios'}>Atras</Link>
+			<div className="flex flex-col justify-start bg-custom-gray mt-2 w-full sm:w-3/4  mx-auto rounded-lg">
+				<button className="bg-red-800 mt-2 w-20 md:w-2/4 lg:w-32 rounded-lg h-10 hover:bg-red-600 font-sans block text-sm leading-5 mx-1 ">
+					<Link href={'/panelAdmin/Usuarios'}>
+						<IoMdArrowRoundBack className="transform scale-150 mx-auto" />
+					</Link>
 				</button>
 
 				<div className="flex justify-center items-center bg-custom-gray mt-4 w-full text-gray-text font-semibold mb-2">
@@ -30,13 +33,20 @@ const Page = async ({ params }) => {
 						<hr />
 
 						<section className="juegosUd">
-							<div className="grid grid-cols-[1fr,100px] mt-5 justify-around ">
-								<h1 className="m-2">Compro 1 Billie Cheese por : $5000</h1>
-								<h1 className="m-2">10/2/2024</h1>
-								<h1 className="m-2">Compro 1 Billie Cheese por : $5000</h1>
-								<h1 className="m-2">10/2/2024</h1>
-								<h1 className="m-2">1232456123</h1>
-								<h1 className="m-2">10/2/2024</h1>
+							<div className="grid grid-cols-[1fr,100px,100px] mt-5 justify-around ">
+								<h1 className="m-2 truncate">
+									Compro 1 Billie Cheese a la senora de dami
+								</h1>
+								<h1 className="m-2">$5000</h1>
+								<h1 className="m-2 truncate">10/2/2024</h1>
+								<h1 className="m-2 truncate">
+									Compro 1 Billie Cheese 2 billiee cheseee dobles, 2 burgerdev
+								</h1>
+								<h1 className="m-2">$5000</h1>
+								<h1 className="m-2 truncate">10/2/2024</h1>
+								<h1 className="m-2 truncate">1232456123</h1>
+								<h1 className="m-2">$5000</h1>
+								<h1 className="m-2 truncate">10/2/2024</h1>
 								{/* {user[0].ventas.length > 0 ? (
 									user[0].ventas.map((license) => (
 										<div key={license.id} className="gap-2">
