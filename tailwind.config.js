@@ -14,9 +14,9 @@ module.exports = {
 			},
 			colors: {
 				'regal-blue': '#75A3BA',
-				 
-        'custom-gray': '#19191A',
-		'gray-text':'#A2A2A3'
+
+				'custom-gray': '#19191A',
+				'gray-text': '#A2A2A3',
 			},
 		},
 	},
