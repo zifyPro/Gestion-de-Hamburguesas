@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Link from 'next/link';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
 const Page = () => {
 	const [allUsers, setAllUsers] = useState([]);
@@ -85,8 +87,18 @@ const Page = () => {
 	const inputClassName =
 		'font-sans block text-sm leading-5 ml-1 w-11/12 py-2 px-3 border-2 border-cyan-600 text-slate-500 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-cyan-200 focus:border-cyan-500 dark:text-slate-400 dark:placeholder:text-slate-600 dark:bg-custom-gray dark:border-cyan-500 dark:focus:ring-cyan-900 dark:focus:border-cyan-600';
 	return (
-		<div className="flex flex-col justify-center items-center bg-custom-gray text-white md:w-2/4 mx-auto mt-4">
+		<div className="flex flex-col justify-center items-center bg-custom-gray text-white md:w-2/4 mx-auto mt-4 rounded-lg">
+			<div className="flex justify-start w-full">
+				<div>
+					<button className="bg-red-800 mt-2 w-20 md:w-2/4 lg:w-32 rounded-lg h-10 hover:bg-red-600 font-sans block text-sm leading-5 mx-1 ">
+						<Link href={'/panelAdmin/'}>
+							<IoMdArrowRoundBack className="transform scale-150 mx-auto" />
+						</Link>
+					</button>
+				</div>
+			</div>
 			<h1 className="mt-4 text-gray-text font-semibold mb-2">USERS</h1>
+
 			<div className=" w-60">
 				<input
 					type="text"

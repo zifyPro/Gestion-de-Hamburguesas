@@ -11,6 +11,9 @@ const Page = async ({ params }) => {
 			: process.env.NEXT_PUBLIC_URL_REQUESTS_USERS_DEPLOY;
 	const response = await axios(`${API_URL}/${params.id}`);
 	const user = response.data;
+	console.log(user);
+
+	user.ventas;
 
 	return (
 		<>
@@ -33,31 +36,27 @@ const Page = async ({ params }) => {
 						<hr />
 
 						<section className="juegosUd">
-							<div className="grid grid-cols-[1fr,100px,100px] mt-5 justify-around ">
-								<h1 className="m-2 truncate">
-									Compro 1 Billie Cheese a la senora de dami
-								</h1>
-								<h1 className="m-2">$5000</h1>
-								<h1 className="m-2 truncate">10/2/2024</h1>
-								<h1 className="m-2 truncate">
-									Compro 1 Billie Cheese 2 billiee cheseee dobles, 2 burgerdev
-								</h1>
-								<h1 className="m-2">$5000</h1>
-								<h1 className="m-2 truncate">10/2/2024</h1>
-								<h1 className="m-2 truncate">1232456123</h1>
-								<h1 className="m-2">$5000</h1>
-								<h1 className="m-2 truncate">10/2/2024</h1>
-								{/* {user[0].ventas.length > 0 ? (
-									user[0].ventas.map((license) => (
-										<div key={license.id} className="gap-2">
-											<p>ventas: {license.nombre}</p>
-											<p>productos: {license.producto.title}</p>{' '}
-										</div>
-									))
-								) : (
-									<p>El usuario no realizo ninguna compra</p>
-								)} */}
-							</div>
+							{user[0].ventas.length > 0 ? (
+								user[0].ventas.map((license) => (
+									<div
+										key={license.id}
+										className="grid grid-cols-[1fr,100px,100px] mt-5 justify-around "
+									>
+										<h1 className="m-2 truncate">
+											{license.productos.map(
+												(producto) => producto.title + '  '
+											)}
+										</h1>
+
+										<p className="m-2">
+											${license.productos.map((producto) => producto.price)}
+										</p>
+										<p className="m-2"> 21/2/2024 </p>
+									</div>
+								))
+							) : (
+								<p className="m-2">El usuario no realizo ninguna compra</p>
+							)}
 						</section>
 					</div>
 				</div>
