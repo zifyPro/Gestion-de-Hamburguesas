@@ -3,7 +3,7 @@ import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState } from "react";
 import axios from "axios";
 
-const Products = () => {
+const Products = (productToBuy) => {
   const [preferenceId, setPreferenceId] = useState(null);
   initMercadoPago(process.env.NEXT_PUBLIC_KEY, {
     locale: "es-AR",
