@@ -5,26 +5,29 @@ import useStore from "@/zustand/store";
 import { useEffect } from "react";
 
 const Cart = () => {
-
-  const { cart,deleateProductToCart } = useStore((state) => ({
+  const { cart, deleateProductToCart } = useStore((state) => ({
     cart: state.cart,
-    deleateProductToCart:state.deleateProductToCart,
+    deleateProductToCart: state.deleateProductToCart,
   }));
-
 
   return (
     <>
-      {cart.map((product) => {
-        return (
-          <div key={product.id}>
-            <h2>{product.title}</h2>
-            <img src={product.img} />
-            <p>{product.price}</p>
-            <button onClick={()=> deleateProductToCart(product.id)}> eliminar</button>
-          </div>
-        );
-      })}
-      <MercadoPago />
+      <div className=" w-[95vh] md:w-2/3 mx-auto bg-custom-gray">
+        {cart.map((product) => {
+          return (
+            <div key={product.id} className="bg-gray-600 w-3/4">
+              <h2>{product.title}</h2>
+              <img src={product.img} />
+              <p>{product.price}</p>
+              <button onClick={() => deleateProductToCart(product.id)}>
+                {" "}
+                eliminar
+              </button>
+            </div>
+          );
+        })}
+        <MercadoPago />
+      </div>
     </>
   );
 };
