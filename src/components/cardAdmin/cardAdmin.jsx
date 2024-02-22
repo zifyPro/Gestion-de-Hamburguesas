@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import { MdDeleteForever } from "react-icons/md";
 import axios from "axios";
+import Link from "next/link";
 
 const CardAdmin = (product) => {
   const deleteProduct = async (id) => {
@@ -13,11 +14,11 @@ const CardAdmin = (product) => {
     Swal.fire({
       position: "center",
       icon: "success",
-      title:product.title + " se elimino correctamente" ,
+      title: product.title + " se elimino correctamente",
       showConfirmButton: false,
       timer: 1500,
-      background: '#19191A', // fondo negro
-      color: '#A2A2A3' // texto blanco
+      background: "#19191A", // fondo negro
+      color: "#A2A2A3", // texto blanco
     });
     return result;
   };
@@ -44,6 +45,9 @@ const CardAdmin = (product) => {
           <div className="text-lg font-bold text-white sm:-mt-[6vh] -mt-[4.5vh] -ml-[7vh]  md:-mt-[3vh]">
             {"$" + product?.price}
           </div>
+          <Link href={`/panelAdmin/Productos/${product?.id}`}>
+            <button className="my-auto">editar</button>
+          </Link>
           <button
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-[6.7vh] md:mt-10 -ml-[7vh]"
             onClick={() => deleteProduct(product?.id)}

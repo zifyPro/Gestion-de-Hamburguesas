@@ -20,9 +20,11 @@ const UpdateProduc = ({ params }) => {
   }, []);
 
   const handleEvent = (event) => {
-    setData({ ...data[0], [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    const newData = [...data];
+    newData[0] = { ...newData[0], [name]: value };
+    setData(newData);
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const priceAsInt = parseInt(data[0]?.price);
@@ -34,7 +36,7 @@ const UpdateProduc = ({ params }) => {
     try {
       await axios.put(API_URL, dataWithIntPrice);
       Swal.fire({
-        title: `${data.title}`,
+        title: `${data[0]?.title}`,
         text: "Se editó correctamente",
         icon: "success",
         background: "#19191A", // fondo negro
@@ -50,7 +52,7 @@ const UpdateProduc = ({ params }) => {
 
   return (
     <div>
-      {data && (
+      {data && data.length > 0 && (
         <div className="flex flex-col bg-custom-gray sm:w-3/4 md:w-2/4 mx-auto mt-2 rounded-lg">
           <form
             onSubmit={handleSubmit}
