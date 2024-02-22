@@ -6,6 +6,7 @@ CREATE TABLE "Productos" (
     "price" INTEGER NOT NULL,
     "img" TEXT NOT NULL,
     "type" TEXT NOT NULL,
+    "puntos" INTEGER NOT NULL,
 
     CONSTRAINT "Productos_pkey" PRIMARY KEY ("id")
 );
@@ -17,6 +18,8 @@ CREATE TABLE "Ventas" (
     "telefono" TEXT NOT NULL,
     "direccion" TEXT NOT NULL,
     "numeroDeOrden" SERIAL NOT NULL,
+    "estaDeProducto" TEXT NOT NULL,
+    "compraRealizada" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "userId" INTEGER,
 
     CONSTRAINT "Ventas_pkey" PRIMARY KEY ("id")

@@ -14,18 +14,21 @@ model Productos {
   price       Int
   img         String
   type        String
+  puntos      Int
   ventas      Ventas[] @relation("ProductosToVentas")
 }
 
 model Ventas {
-  id            Int         @id @default(autoincrement())
-  nombre        String
-  telefono      String
-  direccion     String
-  numeroDeOrden Int         @default(autoincrement())
-  userId        Int?
-  user          User?       @relation(fields: [userId], references: [id])
-  productos     Productos[] @relation("ProductosToVentas")
+  id              Int         @id @default(autoincrement())
+  nombre          String
+  telefono        String
+  direccion       String
+  numeroDeOrden   Int         @default(autoincrement())
+  estaDeProducto  String
+  compraRealizada DateTime    @default(now())
+  userId          Int?
+  user            User?       @relation(fields: [userId], references: [id])
+  productos       Productos[] @relation("ProductosToVentas")
 }
 
 model User {
