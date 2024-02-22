@@ -8,6 +8,7 @@ export default authMiddleware({
   ignoredRoutes: [
     "/api/usuarios",
     "/api/usuarios/:id",
+    "/api/Productos/:id",
     "/api/Ventas",
     "/api/Productos",
     "/api/mercadoPago",
