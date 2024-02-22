@@ -42,6 +42,7 @@ const CreateProduct = () => {
 		<div className="flex flex-col bg-custom-gray sm: w-3/4 md:w-2/4 mx-auto mt-2 rounded-lg ">
 			<form className="flex flex-col mx-auto md:w-2/5  ">
 				<label className="mt-4 text-gray-text font-semibold">
+					Titulo:
 					<input
 						type="text"
 						placeholder="nombre de producto"
@@ -52,6 +53,7 @@ const CreateProduct = () => {
 					/>
 				</label>
 				<label className="mt-4 text-gray-text font-semibold">
+					Descripcion:
 					<input
 						type="text"
 						placeholder="description de producto"
@@ -62,6 +64,7 @@ const CreateProduct = () => {
 					/>
 				</label>
 				<label className="mt-4 text-gray-text font-semibold">
+					Imagen:
 					<input
 						type="text"
 						placeholder="link de la imagen"
@@ -70,8 +73,14 @@ const CreateProduct = () => {
 						onChange={handleEvent}
 						className={`${inputClassName}`}
 					/>
+					<img
+						className="rounded-lg w-52 mt-3 md:w-80 md:ml-3"
+						src={data.img}
+						alt={data.title}
+					/>
 				</label>
 				<label className="mt-4 text-gray-text font-semibold">
+					Precio
 					<input
 						type="text"
 						placeholder="precio del producto"
