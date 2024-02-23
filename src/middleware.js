@@ -19,6 +19,11 @@ export default authMiddleware({
   onUnauthorized: (req, res) => {
     res.status(401).send("No estás autorizado para acceder a esta ruta");
   },
+  onAdminRequired: (req, res) => {
+    res
+      .status(403)
+      .send("Se requiere ser administrador para acceder a esta ruta");
+  },
 });
 
 export const config = {

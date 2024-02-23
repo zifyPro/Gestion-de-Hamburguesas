@@ -14,7 +14,7 @@ model Productos {
   price       Int
   img         String
   type        String
-  puntos      Int
+  puntos      Int?
   ventas      Ventas[] @relation("ProductosToVentas")
 }
 
