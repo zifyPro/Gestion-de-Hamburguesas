@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Products = () => {
   const [preferenceId, setPreferenceId] = useState(null);
-  const { cart } = useStore((state) => ({ cart: state.cart })); // Aquí obtenemos el carrito del estado global
+  const { cart } = useStore((state) => ({ cart: state.cart }));
 
   initMercadoPago(process.env.NEXT_PUBLIC_KEY, {
     locale: "es-AR",
@@ -18,13 +18,17 @@ const Products = () => {
 
   const createPreference = async () => {
     try {
-      const response = await axios.post(API_URL_MERCADO_PAGO, {
-        items: cart.map((product) => ({
-          title: product.title,
-          quantity: product.quantity,
-          price: product.price,
-        })),
-      });
+      const response = await axios.post(
+        API_URL_MERCADO_PAGO,
+        {
+          items: cart.map((product) => ({
+            title: product.title,
+            quantity: product.quantity,
+            price: product.price,
+          })),
+        },
+        { headers: { "Content-Type": "application/json" } }
+      );
       console.log(response);
       const { id } = response.data;
       return id;

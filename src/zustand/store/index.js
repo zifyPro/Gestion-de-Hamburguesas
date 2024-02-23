@@ -7,7 +7,10 @@ import Swal from "sweetalert2";
 const useStore = create(
   (set) => ({
     product: [],
-    cart: JSON.parse(localStorage.getItem("cart")) || [],
+    cart:
+      typeof window !== "undefined"
+        ? JSON.parse(localStorage.getItem("cart")) || []
+        : [],
     filter: "all",
     getHamburguesas: async () => {
       const API_URL =
@@ -65,7 +68,7 @@ const useStore = create(
   }),
   {
     name: "shopping_cart",
-    getStorage: () => localStorage,
+    getStorage: () => (typeof window !== "undefined" ? localStorage : null),
   }
 );
 export default useStore;
