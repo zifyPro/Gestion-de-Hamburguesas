@@ -40,6 +40,12 @@ const Productos = () => {
         >
           promos
         </button>
+        <button
+          onClick={() => setFilter("puntos")}
+          className="bg-slate-800 hover:bg-slate-700 text-white rounded m-3 w-20 shadow-md md:w-24 md:m-20 h-10 font-sans font-semibold italic "
+        >
+          Puntos
+        </button>
 
         <Link href="/panelAdmin/Productos/create">
           <button className="bg-green-700 hover:bg-slate-700 text-white rounded ml-3 w-[10vw] shadow-md md:w-24 md:m-20 h-10 font-sans font-semibold italic ">
