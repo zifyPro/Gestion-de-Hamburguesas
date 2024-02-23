@@ -20,9 +20,8 @@ const Products = () => {
     try {
       const response = await axios.post(API_URL_MERCADO_PAGO, {
         items: cart.map((product) => ({
-          // Aquí enviamos los productos del carrito a la API
           title: product.title,
-          quantity: 2,
+          quantity: product.quantity,
           price: product.price,
         })),
       });
