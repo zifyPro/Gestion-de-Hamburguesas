@@ -24,6 +24,10 @@ const Card = (product) => {
     });
   };
 
+  if (!["comida", "bebida", "promos"].includes(product.type)) {
+    return null;
+  }
+
   return (
     <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-11/12">
       <div className="flex">
