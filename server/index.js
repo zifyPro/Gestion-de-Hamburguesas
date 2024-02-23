@@ -19,32 +19,17 @@ app.get("/", (req, res) => {
 
 app.post("/create_preference", async (req, res) => {
   try {
-    const data = req.body.carrito.map((element) => {
-      return {
-        title: element?.title,
-        quantity: element?.quantity,
-        unit_price: element.price,
-      };
-    });
-    // items: [
-    //   {
-    //     title: req.body.title,
-    //     quantity: req.body.quantity,
-    //     unit_price: Number(req.body.price),
-    //     currency_id: "ARS",
-    //   },
-    // ],
-    // back_urls: {
-    //   success: "http://youtube.com",
-    //   failure: "http://youtube.com",
-    //   pending: "http://youtube.com",
-    // },
-    // auto_return: "approved",
-    // };
-    console.log(data);
+    const body = {
+      items: req.body.items.map((item) => ({
+        title: item.title,
+        quantity: parseInt(item.quantity), // Asegúrate de que 'quantity' sea un número entero
+        unit_price: Number(item.price),
+        currency_id: "ARS",
+      })),
+    };
     console.log("nnnnnnnnn", req.body);
     const preference = new Preference(client);
-    const result = await preference.create({ element: data });
+    const result = await preference.create({ body });
     console.log(result);
     res.json({
       id: result.id,
@@ -60,3 +45,11 @@ app.post("/create_preference", async (req, res) => {
 app.listen(port, () => {
   console.log("El servidor esta corriendo en el puerto 3001");
 });
+
+// const data = req.body.carrito.map((element) => {
+//   return {
+//     title: element?.title,
+//     quantity: element?.quantity,
+//     unit_price: element.price,
+//   };
+// });

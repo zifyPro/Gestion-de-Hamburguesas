@@ -1,4 +1,3 @@
-"use client";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState } from "react";
 import useStore from "@/zustand/store";
@@ -6,27 +5,28 @@ import axios from "axios";
 
 const Products = () => {
   const [preferenceId, setPreferenceId] = useState(null);
+  const { cart } = useStore((state) => ({ cart: state.cart })); // Aquí obtenemos el carrito del estado global
+
   initMercadoPago(process.env.NEXT_PUBLIC_KEY, {
     locale: "es-AR",
   });
-  const { cart } = useStore((state) => ({
-    cart: state.cart,
-  }));
 
   const API_URL_MERCADO_PAGO =
     process.env.NODE_ENV === "development"
       ? process.env.NEXT_PUBLIC_URL_REQUESTS_MERCADO_PAGO_LOCAL
       : process.env.NEXT_PUBLIC_URL_REQUESTS_MERCADO_PAGO_DEPLOY;
+
   const createPreference = async () => {
     try {
-      const carrito = cart.map((product) => ({
-        title: product.title,
-        quantity: 2,
-        unit_price: product.price,
-      }));
-      console.log("111111111111111111", carrito);
-      const response = await axios.post(API_URL_MERCADO_PAGO, carrito);
-      console.log("aaaaaaaaaaaaaaaa", response.data);
+      const response = await axios.post(API_URL_MERCADO_PAGO, {
+        items: cart.map((product) => ({
+          // Aquí enviamos los productos del carrito a la API
+          title: product.title,
+          quantity: 2,
+          price: product.price,
+        })),
+      });
+      console.log(response);
       const { id } = response.data;
       return id;
     } catch (error) {

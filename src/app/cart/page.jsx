@@ -1,8 +1,6 @@
 "use client";
-import Cards from "@/components/cards/Cards";
 import MercadoPago from "@/components/mercadoPago/mercadoPago";
 import useStore from "@/zustand/store";
-import { useEffect } from "react";
 
 const Cart = () => {
   const { cart, deleateProductToCart } = useStore((state) => ({
