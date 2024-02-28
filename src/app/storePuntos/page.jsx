@@ -45,7 +45,10 @@ const NewProductPuntos = () => {
       {product
         .filter((item) => item.type === "puntos")
         .map((filteredItem) => (
-          <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-11/12">
+          <div
+            key={filteredItem?.id}
+            className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-11/12"
+          >
             <div className="flex">
               <div className="flex-shrink-0">
                 <img
