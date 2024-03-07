@@ -24,7 +24,7 @@ const Card = (product) => {
     });
   };
 
-  if (!["comida", "bebida", "promos"].includes(product.type)) {
+  if (!["comida", "bebidas", "promos"].includes(product.type)) {
     return null;
   }
 

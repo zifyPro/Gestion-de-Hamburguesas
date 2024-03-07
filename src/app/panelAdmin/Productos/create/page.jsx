@@ -20,7 +20,8 @@ const CreateProduct = () => {
   const handleSubmit = async () => {
     event.preventDefault();
     const priceAsInt = parseInt(data.price);
-    const dataWithIntPrice = { ...data, price: priceAsInt };
+    const puntosInt = parseInt(data.puntos);
+    const dataWithIntPrice = { ...data, price: priceAsInt, puntos: puntosInt };
     const API_URL =
       process.env.NODE_ENV === "development"
         ? process.env.NEXT_PUBLIC_URL_REQUESTS_PRODUCTOS_LOCAL
