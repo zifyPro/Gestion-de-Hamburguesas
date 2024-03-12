@@ -28,8 +28,11 @@ const Cart = () => {
       <div className=" w-[95vw] md:w-2/4 flex justify-center flex-col items-center mx-auto  bg-gray-600 rounded-xl shadow-md overflow-hidden mx-20">
         {cart.map((product) => {
           return (
-            <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-9/12">
-              <div key={product?.id} className="flex">
+            <div
+              key={product?.id}
+              className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-9/12"
+            >
+              <div className="flex">
                 <div className="flex-shrink-0">
                   <img
                     className="h-32 w-3/5 object-cover"
