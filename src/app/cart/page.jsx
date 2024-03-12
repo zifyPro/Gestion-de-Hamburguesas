@@ -4,7 +4,6 @@ import useStore from "@/zustand/store";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 
-
 const Cart = () => {
   const { cart, deleateProductToCart } = useStore((state) => ({
     cart: state.cart,
@@ -30,7 +29,7 @@ const Cart = () => {
         {cart.map((product) => {
           return (
             <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-9/12">
-              <div className="flex">
+              <div key={product?.id} className="flex">
                 <div className="flex-shrink-0">
                   <img
                     className="h-32 w-3/5 object-cover"
@@ -45,8 +44,10 @@ const Cart = () => {
                   <p className="mt-2 text-gray-500  h-13  line-clamp-3 w-6/12 md:w-4/12">
                     {product?.description}
                   </p>
-                  <button className="block text-lg leading-tight font-medium text-yellow-500 hover:underline -mt-1"
-                  onClick={ ()=>alertDetails(product)}>
+                  <button
+                    className="block text-lg leading-tight font-medium text-yellow-500 hover:underline -mt-1"
+                    onClick={() => alertDetails(product)}
+                  >
                     Leer más
                   </button>
                 </div>
@@ -57,7 +58,10 @@ const Cart = () => {
                   <button
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-5 rounded mt-[6.7vh] md:mt-10 -ml-[15vw] md:-ml-[3.3vw]"
                     onClick={() => deleateProductToCart(product?.id)}
-                  > X</button>
+                  >
+                    {" "}
+                    X
+                  </button>
                 </div>
               </div>
             </div>
