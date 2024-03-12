@@ -39,7 +39,7 @@ const useStore = create(
         Swal.fire({
           icon: "success",
           iconColor: "green",
-          titleText: "produc ADD TO CART",
+          titleText: "producto agregado a tu lista de compra",
           background: "#333333",
           color: "#FF9500",
           html: '<span style="color: orange;"></span>',
@@ -57,7 +57,7 @@ const useStore = create(
         Swal.fire({
           icon: "success",
           iconColor: "green",
-          titleText: "produc DELEATE TO CART",
+          titleText: "producto eliminado de la lista de compra ",
           background: "#333333",
           color: "#FF9500",
           html: '<span style="color: orange;"></span>',
