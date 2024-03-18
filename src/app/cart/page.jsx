@@ -19,7 +19,7 @@ const Cart = () => {
       imageHeight: 200,
       imageAlt: product.title,
       background: "#19191A", // fondo negro
-      color: "#A2A2A3", // texto blanco
+      color: "#A2A2A3",
     });
   };
 
