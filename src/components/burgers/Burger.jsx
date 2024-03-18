@@ -62,7 +62,7 @@ const Burgers = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center  pb-6">
-            <div className="h-[6vh] md:h-[1.5vh]"></div>
+            <div className="h-[8vh] md:h-[5.5vh] bg-red-500"></div>
             <Cards product={product} />
             <Foter />
           </div>

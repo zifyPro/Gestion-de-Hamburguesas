@@ -33,7 +33,7 @@ const Card = (product) => {
       <div className="flex">
         <div className="flex-shrink-0">
           <img
-            className="h-[128px] w-[128px] object-cover overflow-hidden"
+            className="h-[132px] w-[128px] object-cover overflow-hidden"
             src={product?.img}
             alt="Imagen de comida"
           />
@@ -53,11 +53,11 @@ const Card = (product) => {
           </button>
         </div>
         <div className="mt-10 -ml-[15vw] ">
-          <div className="text-lg font-bold text-white sm:-mt-[6vh]  -ml-20 -mt-10  md:-mt-10">
+          <div className="text-lg font-bold text-white sm:-mt-[6vh]  -ml-[65px] -mt-10  md:-mt-10">
             {"$" + product?.price}
           </div>
           <button
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded  mt-16 md:mt-16 -ml-20"
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-12 rounded  mt-16 md:mt-16 -ml-[60px]"
             onClick={handlerBuy}
           >
             <FaCartPlus />
