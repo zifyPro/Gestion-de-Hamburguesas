@@ -1,12 +1,14 @@
-'use client'
-import React from 'react'
+"use client";
+import Burgers from "@/components/burgers/Burger";
+import Link from "next/link";
+import React from "react";
 
 const page = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <Burgers/>
+    </>
+  );
+};
 
-export default page
+export default page;
