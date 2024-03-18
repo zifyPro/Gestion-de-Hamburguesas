@@ -29,17 +29,17 @@ const Card = (product) => {
   }
 
   return (
-    <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-32 md:w-11/12">
+    <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-[132px] md:w-11/12">
       <div className="flex">
         <div className="flex-shrink-0">
           <img
-            className="h-32 w-3/5 object-cover"
+            className="h-[132px] w-3/5 object-cover"
             src={product?.img}
             alt="Imagen de comida"
           />
         </div>
         <div className="-ml-20 w-35">
-          <div className="uppercase tracking-wide text-gray-text font-semibold w-32 relative  text-lg text-nowrap	">
+          <div className="uppercase tracking-wide text-gray-text font-semibold w-32 relative  text-lg text-nowrap	 truncate">
             {product?.title}
           </div>
           <p className="mt-2 text-gray-500  h-13  line-clamp-3 w-6/12 md:w-4/12">
