@@ -33,13 +33,13 @@ const Card = (product) => {
       <div className="flex">
         <div className="flex-shrink-0">
           <img
-            className="h-[132px] w-3/5 object-cover"
+            className="h-[128px] w-[128px] object-cover overflow-hidden"
             src={product?.img}
             alt="Imagen de comida"
           />
         </div>
-        <div className="-ml-20 w-35">
-          <div className="uppercase tracking-wide text-gray-text font-semibold w-32 relative  text-lg text-nowrap	 truncate">
+        <div className="ml-1 w-35">
+          <div className="uppercase tracking-wide text-gray-text font-semibold w-32  relative  text-lg text-nowrap	 truncate md:w-52">
             {product?.title}
           </div>
           <p className="mt-2 text-gray-500  h-13  line-clamp-3 w-6/12 md:w-4/12">
@@ -53,11 +53,11 @@ const Card = (product) => {
           </button>
         </div>
         <div className="mt-10 -ml-[15vw] ">
-          <div className="text-lg font-bold text-white sm:-mt-[6vh] -mt-[4.5vh] -ml-[7vh]  md:-mt-[3vh]">
+          <div className="text-lg font-bold text-white sm:-mt-[6vh]  -ml-20 -mt-10  md:-mt-10">
             {"$" + product?.price}
           </div>
           <button
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-[6.7vh] md:mt-10 -ml-[7vh]"
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded  mt-16 md:mt-16 -ml-20"
             onClick={handlerBuy}
           >
             <FaCartPlus />

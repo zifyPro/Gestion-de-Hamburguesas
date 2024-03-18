@@ -27,12 +27,12 @@ const Burgers = () => {
   return (
     <>
       <div className="bg-custom-gray rounded-lg w-[95vw] md:w-2/4 mx-auto">
-        <div className="flex justify-center  h-5">
+        <div className="flex justify-center  h-5 mb-15">
           <button
             onClick={() => {
               setFilter("comida");
             }}
-            className="bg-slate-800 hover:bg-slate-700  text-white rounded m-3 w-20 shadow-md md:w-24 md:m-20 h-10 font-sans font-semibold italic "
+            className="bg-slate-800 hover:bg-slate-700  text-white rounded m-3 w-20 shadow-md md:w-24 md:m-20 h-10 font-sans font-semibold italic  "
           >
             Burgers
           </button>
@@ -61,7 +61,8 @@ const Burgers = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col items-center h-[65vh]">
+          <div className="flex flex-col items-center  pb-6">
+            <div className="h-[6vh] md:h-[1.5vh]"></div>
             <Cards product={product} />
             <Foter />
           </div>
