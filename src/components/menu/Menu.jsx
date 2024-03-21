@@ -64,7 +64,7 @@ export default function Menus() {
             <HeadlessMenu.Item>
               {({ active }) => (
                 <a
-                  href="/points"
+                  href="/storePuntos"
                   className={classNames(
                     active
                       ? " bg-gray-800 text-gray-text font-semibold"

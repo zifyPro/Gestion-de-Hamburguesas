@@ -1,3 +1,4 @@
+"use client";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { useState } from "react";
 import useStore from "@/zustand/store";
@@ -14,7 +15,7 @@ const Products = () => {
   const API_URL_MERCADO_PAGO =
     process.env.NODE_ENV === "development"
       ? process.env.NEXT_PUBLIC_URL_REQUESTS_MERCADO_PAGO_LOCAL
-      : process.env.NEXT_PUBLIC_URL_REQUESTS_MERCADO_PAGO_DEPLOY;
+      : process.env.NEXT_PUBLIC_PROD_URL_REQUESTS_MERCADO_PAGO_DEPLOY;
 
   const createPreference = async () => {
     try {
