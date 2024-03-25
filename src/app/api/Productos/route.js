@@ -2,8 +2,16 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/libs/prisma";
 
 export async function GET() {
-  const mercaderia = await prisma.productos.findMany();
-  return NextResponse.json(mercaderia);
+  const tienda = await prisma.tienda.findUnique({ where: { id: 1 } });
+  let response;
+  if (tienda.active) {
+    const mercado = await prisma.productos.findMany();
+    response = mercado;
+  } else {
+    response = "la tienda esta cerrada";
+  }
+
+  return NextResponse.json(response);
 }
 
 export async function POST(request) {

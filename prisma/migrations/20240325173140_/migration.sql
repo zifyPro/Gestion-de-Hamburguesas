@@ -1,4 +1,12 @@
 -- CreateTable
+CREATE TABLE "Tienda" (
+    "id" SERIAL NOT NULL,
+    "active" BOOLEAN NOT NULL DEFAULT true,
+
+    CONSTRAINT "Tienda_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Productos" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,

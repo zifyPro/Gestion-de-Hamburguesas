@@ -10,6 +10,7 @@ export default authMiddleware({
     "/api/usuarios/:id",
     "/api/Productos/:id",
     "/api/Ventas",
+    "/api/tienda",
     "/api/Productos",
     "/api/mercadoPago",
     "/api/webhook",
