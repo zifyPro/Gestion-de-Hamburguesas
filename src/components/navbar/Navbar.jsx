@@ -55,7 +55,16 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex justify-center items-center ">
+<<<<<<< HEAD
         <img className="w-3/6 md:w-1/6 " src="/logo.png" alt="logo billiebob" />
+=======
+        
+          <img
+            className="w-3/6 md:w-1/6 "
+            src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
+            alt="logo billiebob"
+          />
+>>>>>>> 37c5a7f09b3d6e399f219a1575aba2e126d9d2c6
       </div>
       {isAdmin && (
         <div className="flex flex- justify-around items-center pt-1">
