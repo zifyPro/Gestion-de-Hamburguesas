@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import { useOrganizationList } from "@clerk/nextjs";
 import { UserButton, useUser } from "@clerk/nextjs";
 import Menus from "../menu/Menu";
+import axios from "axios";
 
 const Navbar = () => {
   const { organizationList, isLoaded } = useOrganizationList();
-  let tienda = false;
+  const [data, setData] = useState([]);
   let isAdmin = false;
 
   if (isLoaded) {
@@ -25,6 +26,19 @@ const Navbar = () => {
 
   const user = useUser();
   const isLogin = user?.isSignedIn;
+
+  useEffect(() => {
+    const fetch = async () => {
+      const API_URL =
+        process.env.NODE_ENV === "development"
+          ? process.env.NEXT_PUBLIC_URL_REQUESTS_TIENDA_LOCAL
+          : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_TIENDA_DEPLOY;
+      const response = await axios.get(API_URL);
+      const result = response.data;
+      setData(result);
+    };
+    fetch();
+  }, []);
 
   return (
     <>
@@ -49,22 +63,25 @@ const Navbar = () => {
             </a>
           )}
         </div>
-
+        <div>
+          {data.map((elem) => {
+            return (
+              <h1 key={elem.id}>
+                {elem?.active === true ? "abierto" : "cerrado"}
+              </h1>
+            );
+          })}
+        </div>
         <div className="-mt-6 -mr-10">
           <Menus />
         </div>
       </div>
       <div className="flex justify-center items-center ">
-<<<<<<< HEAD
-        <img className="w-3/6 md:w-1/6 " src="/logo.png" alt="logo billiebob" />
-=======
-        
-          <img
-            className="w-3/6 md:w-1/6 "
-            src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
-            alt="logo billiebob"
-          />
->>>>>>> 37c5a7f09b3d6e399f219a1575aba2e126d9d2c6
+        <img
+          className="w-3/6 md:w-1/6 "
+          src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
+          alt="logo billiebob"
+        />
       </div>
       {isAdmin && (
         <div className="flex flex- justify-around items-center pt-1">
