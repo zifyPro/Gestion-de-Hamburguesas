@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       }}
     >
       <html lang="es">
-        <body className="bg-[url('https://static.vecteezy.com/system/resources/previews/009/975/366/non_2x/black-wooden-texture-dark-background-blank-for-design-free-photo.jpg')] object-contain   bg-repeat-y">
+        <body className="bg-[url('https://res.cloudinary.com/divxrmzge/image/upload/v1711387729/Imagen_de_WhatsApp_2024-03-25_a_las_12.36.43_f12c5dfb_qag79s.jpg')] bg-cover  ">
           <Navbar />
           {children}
         </body>

@@ -69,7 +69,7 @@ const Navbar = () => {
         
           <img
             className="w-3/6 md:w-1/6 "
-            src="/logo.png"
+            src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
             alt="logo billiebob"
           />
       </div>
