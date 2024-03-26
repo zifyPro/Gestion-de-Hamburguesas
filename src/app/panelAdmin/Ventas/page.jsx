@@ -28,14 +28,14 @@ const Ventas = () => {
                 key={element.id}
                 className=" bg-custom-gray w-2/3 mx-auto mt-5 rounded-lg"
               >
-                <h1 className="w-12 mx-auto  text-gray-text font-semibold">
+                <h1 className="w-36 mx-auto  text-gray-text font-semibold">
                   Nombres: {element.nombre}{" "}
                 </h1>
-                <h1 className="w-12 mx-auto  text-gray-text font-semibold">
+                <h1 className="w-36 mx-auto  text-gray-text font-semibold">
                   Orden: 0{element.numeroDeOrden}{" "}
                 </h1>
-                <h1 className="w-12 mx-auto  text-gray-text font-semibold">
-                  Orden: 0{element.estaDeProducto}{" "}
+                <h1 className="w-42 mx-auto  text-gray-text font-semibold">
+                  Estado: {element.estaDeProducto}{" "}
                 </h1>
               </div>
             );
