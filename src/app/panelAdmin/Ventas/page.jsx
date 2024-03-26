@@ -34,6 +34,9 @@ const Ventas = () => {
                 <h1 className="w-12 mx-auto  text-gray-text font-semibold">
                   Orden: 0{element.numeroDeOrden}{" "}
                 </h1>
+                <h1 className="w-12 mx-auto  text-gray-text font-semibold">
+                  Orden: 0{element.estaDeProducto}{" "}
+                </h1>
               </div>
             );
           })}
