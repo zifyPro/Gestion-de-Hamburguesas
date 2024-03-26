@@ -45,20 +45,19 @@ const PanelAdmin = () => {
   }, []);
 
   const handlerOnclick = async () => {
-    let newData = [...data];
-
-    newData = newData.map((elem) => ({
-      ...elem,
-      active: !elem.active,
-    }));
-
-    setData(newData);
+    const characters = data[0]?.active === true ? false : true;
 
     const API_URL_TIENDA =
       process.env.NODE_ENV === "development"
         ? process.env.NEXT_PUBLIC_URL_REQUESTS_TIENDA_LOCAL
         : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_TIENDA_DEPLOY;
-    const response = await axios.put(API_URL_TIENDA, { data: newData });
+    const response = await axios.put(API_URL_TIENDA, {
+      id: 1,
+      active: characters,
+    });
+    setTimeout(function () {
+      location.reload();
+    }, 1500);
     return response;
   };
 
@@ -70,12 +69,11 @@ const PanelAdmin = () => {
           <a href="/"> {"  Atras"}</a>
         </div>
         <div>
-          <button onClick={() => handlerOnclick.id}>
-            {" "}
+          <button onClick={handlerOnclick}>
             {data.map((elem) => {
               return (
                 <h1 key={elem.id}>
-                  {elem?.active === true ? "cerrar tienda" : "abrir tienda"}
+                  {elem.active === true ? "cerrar tienda" : "abrir tienda"}
                 </h1>
               );
             })}

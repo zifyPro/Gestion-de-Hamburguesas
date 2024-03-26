@@ -22,6 +22,7 @@ export async function DELETE(request) {
 
 export async function PUT(request) {
   const data = await request.json();
+  console.log(data);
   const updateProduct = await prisma.tienda.update({
     where: { id: data.id },
     data,
