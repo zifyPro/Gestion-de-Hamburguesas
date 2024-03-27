@@ -13,12 +13,14 @@ export async function GET() {
 export async function POST(request) {
   const { nombre, telefono, direccion, numeroDeOrden, titleProductos } =
     await request.json();
+  const estaDeProducto = "En proceso de fabricación";
   const newVenta = await prisma.ventas.create({
     data: {
       nombre,
       telefono,
       direccion,
       numeroDeOrden,
+      estaDeProducto,
       productos: {
         connect: {
           title: titleProductos,
