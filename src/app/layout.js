@@ -7,7 +7,7 @@ import { dark } from "@clerk/themes";
 import Navbar from "@/components/navbar/Navbar";
 
 export const metadata = {
-  title: "Mr.Bilee bob",
+  title: "ALTA BURGER",
   description: "las mejores hamburgesas",
 };
 

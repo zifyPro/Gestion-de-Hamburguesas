@@ -62,36 +62,46 @@ const PanelAdmin = () => {
   };
 
   return (
-    <section className="flex flex-col items-center bg-black mt-12 rounded-md w-11/12 mx-auto md:w-[60vw] md:md:h-[60vh] pt-2">
+    <section className="flex flex-col items-center bg-black mt-12 rounded-md w-11/12 mx-auto md:w-[60vw] md:md:h-[71vh] pt-2 mb-40">
       <div className="grid grid-cols-2">
-        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 justify-center md:text-[3vw] text-[5vw]">
+        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 justify-center md:text-[3vw] text-[5vw] h-16">
           <FaArrowLeft />
           <a href="/"> {"  Atras"}</a>
         </div>
         <div>
-          <button onClick={handlerOnclick}>
+          <div
+            className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2  h-16 w-[39vw] md:w-[29vw] justify-center md:text-[3vw] text-[5vw]"
+            onClick={handlerOnclick}
+          >
             {data.map((elem) => {
               return (
                 <h1 key={elem.id}>
-                  {elem.active === true ? "cerrar tienda" : "abrir tienda"}
+                  {elem.active === true ? "Cerrar Tienda" : "Abrir Tienda"}
                 </h1>
               );
             })}
-          </button>
+          </div>
         </div>
-        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 h-[29vh] w-[39vw] md:w-[29vw] justify-center md:text-[3vw] text-[5vw]">
+        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 h-[27vh] w-[39vw] md:w-[29vw] justify-center md:text-[3vw] text-[5vw]">
           <CiBoxes />
 
           <a href="/panelAdmin/Productos">{"  Productos"}</a>
         </div>
-        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 h-[27vh] justify-center md:text-[3vw] text-[5vw]">
+        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 h-[27vh] w-[39vw] md:w-[29vw] justify-center md:text-[3vw] text-[5vw]">
           <FaUsersGear />
 
           <a href="/panelAdmin/Usuarios">{"  Usuarios"}</a>
         </div>
-        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 justify-center md:text-[3vw] text-[5vw]">
+        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 h-[27vh] w-[39vw] md:w-[29vw] justify-center md:text-[3vw] text-[5vw]">
           <FaClipboardList />
           <a href="/panelAdmin/Ventas">{"  Ventas"}</a>
+        </div>
+        <div className="flex list-items items-center p-2  text-gray-text font-semibold bg-custom-gray rounded-lg m-2 h-[27vh] w-[39vw] md:w-[29vw] justify-center md:text-[3vw] text-[5vw]">
+          <img
+            className="h-[16vh]"
+            src="https://res.cloudinary.com/divxrmzge/image/upload/v1711571614/monster-mango-loco-lata-4731-05021a274ae487388f16672555170487-640-0_ffuvoz.png"
+            alt=""
+          />
         </div>
       </div>
     </section>

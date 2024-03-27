@@ -14,7 +14,7 @@ const Navbar = () => {
 
   if (isLoaded) {
     const adminOrganization = organizationList.find(
-      (org) => org.membership.role === "org:admin"
+      (org) => org.membership.role === "org:admin"  
     );
     if (
       adminOrganization &&
@@ -68,16 +68,16 @@ const Navbar = () => {
             return elem?.active === true ? (
               <div
                 key={elem.id}
-                className="bg-green-500 text-white text-center py-1 px-3 md:mt-[-4vh] rounded shadow-lg"
+                className=" absolute bg-green-500 text-white text-center py-1 px-3  -mt-7 -mx-16 rounded shadow-lg"
               >
-                abierto
+                Local Abierto
               </div>
             ) : (
               <div
                 key={elem.id}
-                className="bg-red-500 text-white text-center py-1 px-3 rounded shadow-lg"
+                className="absolute bg-red-500 text-white text-center py-1 px-3  -mt-7 -mx-16 rounded shadow-lg"
               >
-                cerrado
+                Local Cerrado
               </div>
             );
           })}
@@ -87,17 +87,27 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex justify-center items-center ">
-        <img
-          className="w-3/6 md:w-1/6 "
-          src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
-          alt="logo billiebob"
-        />
+        <div className="w-3/6 md:w-1/6 ">
+          {data.map((elem) => {
+            return elem?.active === true ? (
+              <img
+                src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
+                alt="logo billiebob"
+              />
+            ) : (
+              <img
+                src="https://res.cloudinary.com/divxrmzge/image/upload/v1711569317/Proyecto_nuevo_3_b9dmcp.png"
+                alt="logo billiebob"
+              />
+            );
+          })}
+        </div>
       </div>
       {isAdmin && (
         <div className="flex flex- justify-around items-center pt-1">
           <Link className=" p-2 bg-custom-gray rounded-md" href="/panelAdmin">
             <button className=" text-yellow-500 font-semibold">
-              panel administrador
+              Panel Administrador
             </button>
           </Link>
         </div>

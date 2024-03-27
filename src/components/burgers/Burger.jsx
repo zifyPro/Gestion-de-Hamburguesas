@@ -1,14 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { FaStore } from "react-icons/fa";
 import useStore from "../../zustand/store/index";
 import Cards from "../cards/Cards";
+import Swal from "sweetalert2";
 import Foter from "../Foter/Foter";
 
 const Burgers = () => {
-  const { getHamburguesas, setFilter, product } = useStore((state) => ({
+  const { getHamburguesas, setFilter, product, cart } = useStore((state) => ({
     getHamburguesas: state.getHamburguesas,
     setFilter: state.setFilter,
     product: state.product,
+    cart: state.cart,
   }));
 
   const [isLoading, setIsLoading] = useState(true);
@@ -64,6 +67,9 @@ const Burgers = () => {
           <div className="flex flex-col items-center  pb-6">
             <div className="h-[8vh] md:h-[5.5vh] bg-red-500"></div>
             <Cards product={product} />
+            <div className="flex text-black justify-center w-72 mt-8  h-8 font-semibold uppercase text-center text-2xl bg-yellow-400 rounded-lg ">
+              Ir al Carrito = {cart.length }
+            </div>
             <Foter />
           </div>
         )}

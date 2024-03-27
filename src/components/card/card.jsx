@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import { FaCartPlus } from "react-icons/fa6";
 import useStore from "../../zustand/store/index";
+import { BsCartXFill } from "react-icons/bs";
 
 const Card = (product) => {
   const { addProductToCart } = useStore((state) => ({
@@ -27,6 +28,10 @@ const Card = (product) => {
   if (!["comida", "bebidas", "promos"].includes(product.type)) {
     return null;
   }
+
+  const { deleateProductToCart } = useStore((state) => ({
+    deleateProductToCart: state.deleateProductToCart,
+  }));
 
   return (
     <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-[132px] md:w-11/12">
@@ -57,10 +62,18 @@ const Card = (product) => {
             {"$" + product?.price}
           </div>
           <button
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 w-12 rounded  mt-16 md:mt-16 -ml-[60px]"
+            className="  bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-[6.7vh] md:-mt-24  md:-ml-[3.3vw] -ml-[23vw]"
             onClick={handlerBuy}
+            
           >
             <FaCartPlus />
+          </button>
+          <button
+            className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 w-12 rounded  mt-16 md:mt-16 md:-ml-[6vw]   "
+            onClick={() => deleateProductToCart(product?.id)}
+          >
+             <BsCartXFill />
+           
           </button>
         </div>
       </div>

@@ -25,7 +25,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className=" w-[95vw] md:w-2/4 flex justify-center flex-col items-center mx-auto  bg-gray-600 rounded-xl shadow-md overflow-hidden mx-20">
+      <div className=" w-[95vw] md:w-2/4 flex justify-center flex-col items-center   bg-gray-600 rounded-xl shadow-md overflow-hidden mx-20">
         {cart.map((product) => {
           return (
             <div
