@@ -68,14 +68,14 @@ const Navbar = () => {
             return elem?.active === true ? (
               <div
                 key={elem.id}
-                className="bg-green-500 text-white text-center py-1 px-3 md:mt-[-4vh]  rounded shadow-lg"
+                className="bg-green-500 text-white text-center py-1 px-3 md:mt-[-4vh] rounded shadow-lg"
               >
                 abierto
               </div>
             ) : (
               <div
                 key={elem.id}
-                className="bg-red-500 text-white text-center py-1 px-3 md:mt-[-4vh] rounded shadow-lg"
+                className="bg-red-500 text-white text-center py-1 px-3 rounded shadow-lg"
               >
                 cerrado
               </div>
