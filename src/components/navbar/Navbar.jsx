@@ -65,10 +65,20 @@ const Navbar = () => {
         </div>
         <div>
           {data.map((elem) => {
-            return (
-              <h1 key={elem.id}>
-                {elem?.active === true ? "abierto" : "cerrado"}
-              </h1>
+            return elem?.active === true ? (
+              <div
+                key={elem.id}
+                className="bg-green-500 text-white text-center py-1 px-3 md:mt-[-4vh]  rounded shadow-lg"
+              >
+                abierto
+              </div>
+            ) : (
+              <div
+                key={elem.id}
+                className="bg-red-500 text-white text-center py-1 px-3 md:mt-[-4vh] rounded shadow-lg"
+              >
+                cerrado
+              </div>
             );
           })}
         </div>
