@@ -9,6 +9,7 @@ export default authMiddleware({
     "/api/usuarios",
     "/api/usuarios/:id",
     "/api/Productos/:id",
+    "/api/Ventas/:id",
     "/api/Ventas",
     "/api/tienda",
     "/api/Productos",

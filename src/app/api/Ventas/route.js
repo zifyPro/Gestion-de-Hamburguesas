@@ -30,3 +30,12 @@ export async function POST(request) {
   });
   return NextResponse.json(newVenta);
 }
+
+export async function PUT(request) {
+  const data = await request.json();
+  const updateVentas = await prisma.ventas.update({
+    where: { id: data.id },
+    data,
+  });
+  return NextResponse.json(updateVentas);
+}

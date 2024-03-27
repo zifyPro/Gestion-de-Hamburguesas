@@ -1,9 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Swal from "sweetalert2";
 
-const ventasId = () => {
-  const [data, setData] = useState([]);
+const VentasId = ({ params }) => {
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetch = async () => {
@@ -44,6 +46,9 @@ const ventasId = () => {
       console.error("Error al actualizar el producto:", error);
     }
   };
+
+  const inputClassName =
+    "font-sans block text-sm leading-5 ml-1 w-11/12 py-2 px-3 border-2 border-cyan-600 text-slate-500 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-cyan-200 focus:border-cyan-500 dark:text-slate-400 dark:placeholder:text-slate-600 dark:bg-custom-gray dark:border-cyan-500 dark:focus:ring-cyan-900 dark:focus:border-cyan-600";
 
   return (
     <div>
@@ -129,4 +134,4 @@ const ventasId = () => {
     </div>
   );
 };
-export default ventasId;
+export default VentasId;
