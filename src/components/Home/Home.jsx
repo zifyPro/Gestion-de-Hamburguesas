@@ -33,7 +33,7 @@ const Home = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="https://www.on24.com.ar/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-11-at-4.21.57-PM.jpeg"
+              src="https://res.cloudinary.com/divxrmzge/image/upload/v1711593563/weqweqweqweqweqwe_cw2lpj.jpg"
               alt="Imagen 3"
               className="w-full h-full md:w-2/4 md:h-full md:mx-auto rounded-xl"
             />

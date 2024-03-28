@@ -75,17 +75,17 @@ const Navbar = () => {
           {data.map((elem) => {
             return elem?.active === true ? (
               <div
-                key={elem.id}
-                className=" absolute  flex justify-center bg-green-500 text-white text-center py-1 px-3  -mt-7 -mx-20 rounded shadow-lg"
+                key={elem.id+1}
+                className=" absolute  flex justify-center bg-green-500 text-white text-center py-1 px-3  -mt-7 -mx-16 rounded shadow-lg"
               >
-                Local Abierto
+               Abierto
               </div>
             ) : (
               <div
                 key={elem.id}
                 className="absolute bg-red-500 text-white text-center py-1 px-3  -mt-7 -mx-16 rounded shadow-lg"
               >
-                Local Cerrado
+                Cerrado
               </div>
             );
           })}
@@ -98,7 +98,9 @@ const Navbar = () => {
         <div className="w-3/6 md:w-1/6 ">
           {dataCargada === false ? (
             <img
-              src="https://codigofuente.io/wp-content/uploads/2018/09/animacion-loading.gif"
+            className="animate-slide"
+            key={"ALTA BURGER"}
+              src="https://res.cloudinary.com/divxrmzge/image/upload/v1711593088/alta_burger_load_movblk.png"
               alt="logo billiebob"
             />
           ) : (
@@ -108,12 +110,16 @@ const Navbar = () => {
           {data.map((elem) => {
             return elem?.active === true ? (
               <img
-                src="https://res.cloudinary.com/divxrmzge/image/upload/v1711388193/logo_ti2r2d.png"
+              className="animate-slide"
+              key={"Alta Burger Loaded"}
+                src="https://res.cloudinary.com/divxrmzge/image/upload/v1711593428/alta_burger_open_xb1wku.png"
                 alt="logo billiebob"
               />
             ) : (
               <img
-                src="https://res.cloudinary.com/divxrmzge/image/upload/v1711569317/Proyecto_nuevo_3_b9dmcp.png"
+              className="animate-slide"
+              key={"Alta Burger close"}
+                src="https://res.cloudinary.com/divxrmzge/image/upload/v1711593271/alta_burger_cerrado_ccbdyz.png"
                 alt="logo billiebob"
               />
             );

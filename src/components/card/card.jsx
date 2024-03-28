@@ -4,8 +4,9 @@ import useStore from "../../zustand/store/index";
 import { BsCartXFill } from "react-icons/bs";
 
 const Card = (product) => {
-  const { addProductToCart } = useStore((state) => ({
+  const { addProductToCart,deleateProductToCart } = useStore((state) => ({
     addProductToCart: state.addProductToCart,
+    deleateProductToCart: state.deleateProductToCart,
   }));
 
   const handlerBuy = () => {
@@ -29,9 +30,6 @@ const Card = (product) => {
     return null;
   }
 
-  const { deleateProductToCart } = useStore((state) => ({
-    deleateProductToCart: state.deleateProductToCart,
-  }));
 
   return (
     <div className="mx-auto bg-black rounded-xl shadow-md overflow-hidden w-[92vw] m-4 h-[132px] md:w-11/12">

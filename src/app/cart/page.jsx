@@ -1,7 +1,6 @@
 "use client";
 import MercadoPago from "@/components/mercadoPago/mercadoPago";
 import useStore from "@/zustand/store";
-import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 
 const Cart = () => {

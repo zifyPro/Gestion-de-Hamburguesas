@@ -66,11 +66,16 @@ const Burgers = () => {
         ) : (
           <div className="flex flex-col items-center  pb-6">
             <div className="h-[8vh] md:h-[5.5vh] bg-red-500"></div>
-            <Cards product={product} /> 
-            <h1 className="flex justify-center mt-4 "> Productos a comprar : {cart.length }</h1>
-            <div className="flex text-black justify-center w-64 mt-2  h-8 font-semibold  text-center text-2xl bg-yellow-400 rounded-lg ">
-              Finalizar Compra 
-            </div>
+            <Cards product={product} />
+            <h1 className="flex justify-center mt-4 ">
+              {" "}
+              Productos a comprar : {cart.length}
+            </h1>
+            <a href="/cart">
+              <div className="flex text-black justify-center w-64 mt-2  h-8 font-semibold  text-center text-2xl bg-yellow-400 rounded-lg ">
+                Finalizar Compra
+              </div>
+            </a>
             <Foter />
           </div>
         )}
