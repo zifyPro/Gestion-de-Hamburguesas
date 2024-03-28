@@ -20,18 +20,12 @@ const useStore = create(
       set({ product: response.data });
     },
     setFilter: (filter) => set({ filter }),
-    addProductToCart: (producto) =>
+    addProductToCart: (producto, cantidad = 1) =>
       set((state) => {
         let newProductInCart = [...state.cart];
-        const existingProductIndex = newProductInCart.findIndex(
-          (item) => item.id === producto.id
-        );
 
-        if (existingProductIndex >= 0) {
-          // Si el producto ya está en el carrito, incrementa su quantity en 1
-          newProductInCart[existingProductIndex].quantity += 1;
-        } else {
-          // Si el producto no está en el carrito, lo agrega con quantity igual a 1
+        // Agrega el producto al carrito con la cantidad especificada, sin importar si ya está en el carrito
+        for (let i = 0; i < cantidad; i++) {
           newProductInCart.push({ ...producto, quantity: 1 });
         }
 
