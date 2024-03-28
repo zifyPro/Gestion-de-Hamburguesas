@@ -1,5 +1,6 @@
 "use client";
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -22,7 +23,18 @@ const useStore = create(
     setFilter: (filter) => set({ filter }),
     addProductToCart: (producto) =>
       set((state) => {
-        let newProductInCart = [...state.cart, producto];
+        let newProductInCart = [...state.cart];
+        const existingProductIndex = newProductInCart.findIndex(
+          (item) => item.id === producto.id
+        );
+
+        if (existingProductIndex >= 0) {
+          // Si el producto ya está en el carrito, incrementa su quantity en 1
+          newProductInCart[existingProductIndex].quantity += 1;
+        } else {
+          // Si el producto no está en el carrito, lo agrega con quantity igual a 1
+          newProductInCart.push({ ...producto, quantity: 1 });
+        }
 
         Swal.fire({
           icon: "success",
@@ -40,15 +52,8 @@ const useStore = create(
     deleateProductToCart: (id) =>
       set((state) => {
         const cart2 = [...state.cart];
-        const sameIdCount = cart2.filter((item) => item.id === id).length;
 
-        let ProductInCart;
-        if (sameIdCount > 1) {
-          const index = cart2.findIndex((item) => item.id === id);
-          ProductInCart = [...cart2.slice(0, index), ...cart2.slice(index + 1)];
-        } else {
-          ProductInCart = cart2.filter((item) => item.id !== id);
-        }
+        const ProductInCart = cart2.filter((item) => item.id !== id);
         Swal.fire({
           icon: "success",
           iconColor: "green",

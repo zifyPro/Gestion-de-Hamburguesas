@@ -10,11 +10,18 @@ import axios from "axios";
 const Navbar = () => {
   const { organizationList, isLoaded } = useOrganizationList();
   const [data, setData] = useState([]);
+  const [dataCargada, setDataCargada] = useState(false);
+  //si la data esta cargada
+
+  const setDataCargada1 = () => {
+    setDataCargada(true);
+  };
+
   let isAdmin = false;
 
   if (isLoaded) {
     const adminOrganization = organizationList.find(
-      (org) => org.membership.role === "org:admin"  
+      (org) => org.membership.role === "org:admin"
     );
     if (
       adminOrganization &&
@@ -36,6 +43,7 @@ const Navbar = () => {
       const response = await axios.get(API_URL);
       const result = response.data;
       setData(result);
+      setDataCargada(true);
     };
     fetch();
   }, []);
@@ -68,7 +76,7 @@ const Navbar = () => {
             return elem?.active === true ? (
               <div
                 key={elem.id}
-                className=" absolute bg-green-500 text-white text-center py-1 px-3  -mt-7 -mx-16 rounded shadow-lg"
+                className=" absolute  flex justify-center bg-green-500 text-white text-center py-1 px-3  -mt-7 -mx-20 rounded shadow-lg"
               >
                 Local Abierto
               </div>
@@ -88,6 +96,15 @@ const Navbar = () => {
       </div>
       <div className="flex justify-center items-center ">
         <div className="w-3/6 md:w-1/6 ">
+          {dataCargada === false ? (
+            <img
+              src="https://codigofuente.io/wp-content/uploads/2018/09/animacion-loading.gif"
+              alt="logo billiebob"
+            />
+          ) : (
+            " "
+          )}
+
           {data.map((elem) => {
             return elem?.active === true ? (
               <img
