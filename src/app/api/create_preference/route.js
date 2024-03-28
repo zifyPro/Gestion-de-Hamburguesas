@@ -7,6 +7,7 @@ const client = new MercadoPagoConfig({
 export async function POST(request) {
   try {
     const data = await request.json();
+    console.log(data);
     const body = {
       items: data.items.map((item) => ({
         title: item.title,
