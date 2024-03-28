@@ -1,46 +1,31 @@
 "use client";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
+import Despacho from "@/components/Ventas/despacho/despacho";
+import Entregado from "@/components/Ventas/entregado/entregado";
+import Fabricacion from "@/components/Ventas/fabricacion/fabricacion";
 
 const Ventas = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetch = async () => {
-      const API_URL =
-        process.env.NODE_ENV === "development"
-          ? process.env.NEXT_PUBLIC_URL_REQUESTS_VENTAS_LOCAL
-          : process.env.NEXT_PUBLIC__PROD_URL_REQUESTS_VENTAS_DEPLOY;
-      const response = await axios.get(API_URL);
-      const result = response.data;
-      setData(result);
-    };
-    fetch();
-  }, []);
   return (
-    <>
-      <h1>hola estan son las ventas</h1>
-      {data.length === 0
-        ? "no hay compras "
-        : data.map((element) => {
-            return (
-              <div
-                key={element.id}
-                className=" bg-custom-gray w-2/3 mx-auto mt-5 rounded-lg"
-              >
-                <h1 className="w-36 mx-auto  text-gray-text font-semibold">
-                  Nombres: {element.nombre}{" "}
-                </h1>
-                <h1 className="w-36 mx-auto  text-gray-text font-semibold">
-                  Orden: 0{element.numeroDeOrden}{" "}
-                </h1>
-                <h1 className="w-42 mx-auto  text-gray-text font-semibold">
-                  Estado: {element.estaDeProducto}{" "}
-                </h1>
-              </div>
-            );
-          })}
-    </>
+    <div className="bg-black">
+      <div className=" bg-[#222] justify-around flex  md:flex-row ">
+        <div>En Proceso:</div>
+        <div>Despacho:</div>
+        <div>Entregado:</div>
+      </div>
+      <div className="justify-around flex  md:flex-row">
+        <div className="bg-green-600 flex flex-col">
+          <Fabricacion />
+        </div>
+
+        <div className="bg-orange-600 flex flex-col">
+          <Despacho />
+        </div>
+
+        <div className="bg-red-700 flex flex-col">
+          <Entregado />
+        </div>
+      </div>
+    </div>
   );
 };
 

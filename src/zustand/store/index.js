@@ -22,9 +22,7 @@ const useStore = create(
     setFilter: (filter) => set({ filter }),
     addProductToCart: (producto) =>
       set((state) => {
-        let newProductInCart = [...state.cart,producto];
-       
-
+        let newProductInCart = [...state.cart, producto];
 
         Swal.fire({
           icon: "success",
@@ -42,8 +40,15 @@ const useStore = create(
     deleateProductToCart: (id) =>
       set((state) => {
         const cart2 = [...state.cart];
+        const sameIdCount = cart2.filter((item) => item.id === id).length;
 
-        const ProductInCart = cart2.filter((item) => item.id !== id);
+        let ProductInCart;
+        if (sameIdCount > 1) {
+          const index = cart2.findIndex((item) => item.id === id);
+          ProductInCart = [...cart2.slice(0, index), ...cart2.slice(index + 1)];
+        } else {
+          ProductInCart = cart2.filter((item) => item.id !== id);
+        }
         Swal.fire({
           icon: "success",
           iconColor: "green",
