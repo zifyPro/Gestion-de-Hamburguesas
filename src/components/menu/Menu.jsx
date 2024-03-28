@@ -49,7 +49,7 @@ export default function Menus() {
             <HeadlessMenu.Item>
               {({ active }) => (
                 <Link
-                  href="/cart"
+                  href="/store"
                   className={classNames(
                     active
                       ? " bg-gray-800 text-gray-text font-semibold"
@@ -57,7 +57,22 @@ export default function Menus() {
                     "block px-4 py-2 text-sm"
                   )}
                 >
-                  Carrito
+                  Menu
+                </Link>
+              )}
+            </HeadlessMenu.Item>
+            <HeadlessMenu.Item>
+              {({ active }) => (
+                <Link
+                  href="/MiCompra"
+                  className={classNames(
+                    active
+                      ? " bg-gray-800 text-gray-text font-semibold"
+                      : "  text-gray-text font-semibold",
+                    "block px-4 py-2 text-sm"
+                  )}
+                >
+                  Mis Compras
                 </Link>
               )}
             </HeadlessMenu.Item>
