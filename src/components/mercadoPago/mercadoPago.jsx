@@ -30,7 +30,7 @@ const Products = () => {
         },
         { headers: { "Content-Type": "application/json" } }
       );
-      console.log(response);
+      console.log("aaaaaa", response);
       const { id } = response.data;
       return id;
     } catch (error) {
